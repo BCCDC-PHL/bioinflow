@@ -20,11 +20,6 @@ if (params.profile){
 
 
 
-if ( (params.bed && ! params.ref) || (!params.bed && params.ref) ) {
-  println("--bed and --ref must be supplied together")
-  System.exit(1)
-}
-
 
 
 
