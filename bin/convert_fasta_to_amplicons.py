@@ -1,9 +1,11 @@
 import argparse
+import os
 from Bio import SeqIO
 
-def convert_amplicons(bed_file, output_file):
+def convert_bed_to_multi_fasta(bed_file, reference_directory, output_directory):
     amplicon_positions = {}
 
+    # Read amplicon positions from the bed file
     with open(bed_file, "r") as f:
         for line in f:
             parts = line.strip().split()
@@ -21,26 +23,34 @@ def convert_amplicons(bed_file, output_file):
                 elif "RIGHT" in name:
                     amplicon_positions[position_key]["end"] = int(end)
 
+    # Create the output directory if it doesn't exist
+    os.makedirs(output_directory, exist_ok=True)
 
-    with open(output_file, "w") as output:
-        for record in SeqIO.parse(reference_file, "fasta"):
-            for amplicon_name, start, end in amplicon_positions.items():
-                if start is not None and end is not None:
-                    amplicon_sequence = record.seq[start - 1 : end]
-                    amplicon_record = f">{amplicon_name}\n{amplicon_sequence}\n"
-                    output.write(amplicon_record)
+    # Process each reference FASTA file
+    for reference_file in os.listdir(reference_directory):
+        if reference_file.endswith(".fasta") or reference_file.endswith(".fa"):
+            reference_path = os.path.join(reference_directory, reference_file)
+            reference_name, _ = os.path.splitext(os.path.basename(reference_file))
+            output_file = os.path.join(output_directory, f"{reference_name}_amplicon.fasta")
 
+            with open(output_file, "w") as output:
+                for record in SeqIO.parse(reference_path, "fasta"):
+                    for amplicon_number, positions in amplicon_positions.items():
+                        start = positions["start"]
+                        end = positions["end"]
+                        if start is not None and end is not None:
+                            amplicon_sequence = record.seq[start - 1 : end]
+                            amplicon_record = f">{amplicon_number}\n{amplicon_sequence}\n"
+                            output.write(amplicon_record)
 
 def main(args):
-    convert_amplicons(args.bed_file, args.output_file)
+    convert_bed_to_multi_fasta(args.bed_file, args.reference_directory, args.output_directory)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Convert a BED file to the required amplicon positions format")
-    parser.add_argument("--bed_file", help="Input BED file")
-    parser.add_argument("output_file", help="Output file for amplicon positions")
-    parser.add_argument("--reference-file", required=True, help="Path to the reference FASTA file")
-    parser.add_argument("--amplicon-file", required=True, help="Path to the amplicon positions file")
-    parser.add_argument("--output-file", required=True, help="Path to the output multi-FASTA file")
+    parser = argparse.ArgumentParser(description="Convert a BED file to multi-FASTA files for a directory of reference FASTA files")
+    parser.add_argument("--bed_file", required=True, help="Input BED file")
+    parser.add_argument("--reference_directory", required=True, help="Path to the directory containing reference FASTA files")
+    parser.add_argument("--output_directory", required=True, help="Path to the output directory for multi-FASTA files")
     args = parser.parse_args()
 
     main(args)

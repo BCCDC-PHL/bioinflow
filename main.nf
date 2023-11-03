@@ -46,11 +46,9 @@ if ( ! params.prefix ) {
 // main workflow
 workflow {
 
-  Channel.fromFilePairs( params.fastqSearchPath, flat: true)
-	          .filter{ !( it[0] =~ /Undetermined/ ) }
-	          .set{ ch_filePairs }
+
 
   main:
-    AMPulator(ch_filePairs)
+    AMPulator()
      
 }
