@@ -32,6 +32,6 @@ workflow {
 
 
   main:
-    convertFastaToAmplicons(ch_bedFile, ch_ref_dir)
+    convertFastaToAmplicons(ch_bedFile, ch_refDir)
      
 }
