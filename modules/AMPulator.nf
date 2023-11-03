@@ -7,7 +7,7 @@ process convertFastaToAmplicons {
 
     input:
     path(bed)
-    path(fasta_dir),
+    path(fasta_dir)
 
     output:
     tuple val(sampleName), path('*amplicon.fasta')
