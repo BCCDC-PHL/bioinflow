@@ -9,12 +9,12 @@ process convertFastaToAmplicons {
     tuple val(sampleName), path(fasta_dir), path(bed)
 
     output:
-    tuple val(sampleName), path("*amplicon.fasta")
+    tuple val(sampleName), path('*amplicon.fasta')
 
     script:
 
     """
-    convert_fasta_to_amplicons.py --bed_file $bed --reference_directory $fasta_dir --output_directory amplicon_fastas
+    convert_fasta_to_amplicons.py --bed_file ${bed} --reference_directory ${fasta_dir} --output_directory amplicon_fastas
     """
 
 
