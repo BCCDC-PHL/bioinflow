@@ -18,11 +18,7 @@ if (params.profile){
     System.exit(1)
 }
 
-if ( !params.directory ) {
-  println("Please supply a directory containing fastqs or CRAMs with --directory.")
-  println("Use --help to print help")
-  System.exit(1)
-}
+
 
 if ( (params.bed && ! params.ref) || (!params.bed && params.ref) ) {
   println("--bed and --ref must be supplied together")
