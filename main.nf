@@ -6,7 +6,7 @@ nextflow.enable.dsl = 2
 include {printHelp} from './modules/help.nf'
 
 // import subworkflows
-include {AMPulator} from './modules/AMPulator.nf'
+include {convertFastaToAmplicons} from './modules/AMPulator.nf'
 
 if (params.help){
     printHelp()
@@ -49,6 +49,6 @@ workflow {
 
 
   main:
-    AMPulator()
+    convertFastaToAmplicons()
      
 }
