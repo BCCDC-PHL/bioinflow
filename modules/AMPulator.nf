@@ -1,7 +1,7 @@
 process convertFastaToAmplicons {
     tag { sampleName }
 
-    publishDir "${params.outdir}/amplicon_fastas", pattern 'amplicon_fastas/*amplicon.fasta', mode: 'copy'
+    publishDir "${params.outdir}/amplicon_fastas", pattern "amplicon_fastas/*amplicon.fasta", mode: 'copy'
     
     cpus 1
 
