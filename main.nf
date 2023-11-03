@@ -19,7 +19,8 @@ if (params.profile){
 }
 
 
-
+ch_bedFile = Channel.fromPath(params.bed)
+ch_refDir = Channel.fromPath(params.ref_dir)
 
 
 
@@ -31,6 +32,6 @@ workflow {
 
 
   main:
-    convertFastaToAmplicons()
+    convertFastaToAmplicons(ch_bedFile, ch_ref_dir)
      
 }
