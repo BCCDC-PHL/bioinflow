@@ -6,7 +6,8 @@ process convertFastaToAmplicons {
     cpus 1
 
     input:
-    tuple val(sampleName), path(fasta_dir), path(bed)
+    tuple val(sampleName),  path(bed)
+    tuple val(sampleName), path(fasta_dir),
 
     output:
     tuple val(sampleName), path('*amplicon.fasta')
