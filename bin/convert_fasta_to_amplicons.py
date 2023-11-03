@@ -7,7 +7,6 @@ def convert_amplicons(bed_file, output_file):
     with open(bed_file, "r") as f:
         for line in f:
             parts = line.strip().split()
-            print(parts)
             if len(parts) == 6:
                 chrom, start, end, name, primer_pool, strand = parts
 
