@@ -10,7 +10,7 @@ process convertFastaToAmplicons {
     path(fasta_dir)
 
     output:
-    path('*amplicon.fasta')
+    path('amplicon_fastas/*amplicon.fasta')
 
     script:
 
