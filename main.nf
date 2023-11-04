@@ -7,6 +7,7 @@ include {printHelp} from './modules/help.nf'
 
 // import subworkflows
 include {convertFastaToAmplicons} from './modules/AMPulator.nf'
+include {runART} from './modules/AMPulator.nf'
 
 
 if (params.help){
