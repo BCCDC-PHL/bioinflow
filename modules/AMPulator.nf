@@ -32,7 +32,7 @@ process runART {
     path(amplicon_fastas)
 
     output:
-    path("*fq.qz)
+    path("*fq.qz")
 
 
     script:
