@@ -30,8 +30,8 @@ process runART {
     input:
     path(amplicon_fasta)
     path(bed)
-    path(modelR1)
     path(model_R1)
+    path(model_R2)
     val(depth)
     val(fragment_mean)
     val(fragment_sd)
