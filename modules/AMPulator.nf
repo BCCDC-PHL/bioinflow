@@ -30,7 +30,7 @@ process runART {
 
     input:
     // path(amplicon_fasta)
-    file amplicon_fasta
+    file amplicon_fasta from amplicon_fastas
     path(bed)
     path(model_R1)
     path(model_R2)
