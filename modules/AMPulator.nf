@@ -21,30 +21,3 @@ process convertFastaToAmplicons {
 
 }
 
-process runART {
-
-    tag {sampleName}
-
-    publishDir "${params.outdir}", mode: 'copy', pattern: "amplicon_fastas/*amplicon.fasta"
-
-    cpus 8
-
-    input:
-    path(amplicon_fastas)
-
-    output:
-    path("*fq.qz)
-
-
-    script:
-    """
-    
-    """
-
-
-
-
-
-
-
-}
