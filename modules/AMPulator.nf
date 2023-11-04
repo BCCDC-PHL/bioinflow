@@ -45,7 +45,7 @@ process runART {
     script:
     """
 
-    IFS=" " read -ra input_array <<< ${amplicon_fasta}
+    IFS=" " read -ra input_array <<< "${amplicon_fasta}"
 
     
     
