@@ -32,9 +32,9 @@ process runART {
     path(bed)
     path(modelR1)
     path(model_R1)
-    path(depth)
-    path(fragment_mean)
-    path(fragment_sd)
+    val(depth)
+    val(fragment_mean)
+    val(fragment_sd)
     
 
     output:
