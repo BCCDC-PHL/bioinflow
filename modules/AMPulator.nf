@@ -29,7 +29,7 @@ process runART {
     cpus 8
 
     input:
-    path(amplicon_fastas)
+    path(amplicon_fasta)
     path(bed)
     path(modelR1)
     path(model_R1)
@@ -44,7 +44,7 @@ process runART {
 
     script:
     """
-    art_illumina -1 ${model_R1} -2 ${model_R2} -i ${fasta} -f ${depth} -l 150 -p -m ${fragment_mean} -s ${fragment_sd} -o ${amplicon.fasta}_R
+    art_illumina -1 ${model_R1} -2 ${model_R2} -i ${amplicon_fasta} -f ${depth} -l 150 -p -m ${fragment_mean} -s ${fragment_sd} -o ${amplicon_fasta}_R
     """
 
 
