@@ -30,6 +30,13 @@ process runART {
 
     input:
     path(amplicon_fastas)
+    path(bed)
+    path(modelR1)
+    path(model_R1)
+    path(depth)
+    path(fragment_mean)
+    path(fragment_sd)
+    
 
     output:
     path("*fq.qz")
@@ -37,7 +44,7 @@ process runART {
 
     script:
     """
-    art_illumina -1 ${params.model_R1} -2 ${params.model_R2} -i ${amplicon.fasta} -f ${params.depth} -l 150 -p -m ${params.fragment_mean} -s ${params.fragment_sd} -o ${amplicon.fasta}_R
+    art_illumina -1 ${model_R1} -2 ${model_R2} -i ${fasta} -f ${depth} -l 150 -p -m ${fragment_mean} -s ${fragment_sd} -o ${amplicon.fasta}_R
     """
 
 
