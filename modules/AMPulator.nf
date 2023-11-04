@@ -10,7 +10,7 @@ process convertFastaToAmplicons {
     path(fasta_dir)
 
     output:
-    path('*amplicon.fasta')
+    path('*amplicon.fasta'), emit: amplicon_fastas
 
     script:
 
@@ -37,7 +37,7 @@ process runART {
 
     script:
     """
-    echo "test"
+    art_illumina -1 ${params.model_R1} -2 ${params.model_R2} -i ${amplicon.fasta} -f ${params.depth} -l 150 -p -m ${params.fragment_mean} -s ${params.fragment_sd} -o ${amplicon.fasta}_R
     """
 
 
