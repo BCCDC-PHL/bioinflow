@@ -29,8 +29,7 @@ process runART {
     cpus 8
 
     input:
-    // path(amplicon_fasta)
-    file amplicon from amplicon_fastas
+    path(amplicon_fasta)
     path(bed)
     path(model_R1)
     path(model_R2)
