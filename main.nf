@@ -39,6 +39,6 @@ workflow {
 
   main:
     convertFastaToAmplicons(ch_bedFile, ch_refDir)
-    runART(convertFastaToAmplicons.out.amplicon_fastas, ch_bedFile, ch_refDir, ch_modelR1, ch_modelR2, ch_depth, ch_fragmentMean, ch_fragmentSD)
+    runART(convertFastaToAmplicons.out.amplicon_fastas, ch_bedFile, ch_modelR1, ch_modelR2, ch_depth, ch_fragmentMean, ch_fragmentSD)
      
 }
