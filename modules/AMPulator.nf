@@ -21,3 +21,30 @@ process convertFastaToAmplicons {
 
 }
 
+
+process runART {
+
+    tag {sampleName}
+
+    cpus 8
+
+    input:
+    path(amplicon_fastas)
+
+    output:
+    path("*fq.qz)
+
+
+    script:
+    """
+    echo "test"
+    """
+
+
+
+
+
+
+
+}
+
