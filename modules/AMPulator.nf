@@ -30,7 +30,7 @@ process runART {
 
     input:
     // path(amplicon_fasta)
-    file amplicon_fasta from amplicon_fastas
+    file amplicon from amplicon_fastas
     path(bed)
     path(model_R1)
     path(model_R2)
@@ -45,7 +45,7 @@ process runART {
 
     script:
     """
-    art_illumina -1 ${model_R1} -2 ${model_R2} -i ${amplicon_fasta} -f ${depth} -l 150 -p -m ${fragment_mean} -s ${fragment_sd} -o _R
+    art_illumina -1 ${model_R1} -2 ${model_R2} -i ${amplicon} -f ${depth} -l 150 -p -m ${fragment_mean} -s ${fragment_sd} -o _R
     """
 
 }
