@@ -45,13 +45,7 @@ process runART {
     script:
     """
 
-    IFS=" " read -ra input_array <<< ${amplicon_fasta}
 
-    # Loop through the array and run a command for each item
-    for fasta in "${input_array[@]}"; do
-    art_illumina -1 ${model_R1} -2 ${model_R2} -i ${fasta} -f ${depth} -l 150 -p -m ${fragment_mean} -s ${fragment_sd} -o _R
-
-    done
     
     """
 
