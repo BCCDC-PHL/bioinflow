@@ -7,7 +7,7 @@ include {printHelp} from './modules/help.nf'
 
 // import subworkflows
 include {convertFastaToAmplicons} from './modules/AMPulator.nf'
-include {runART} from './modules/AMPulator.nf'
+
 
 if (params.help){
     printHelp()
@@ -40,7 +40,7 @@ workflow {
 
   main:
     convertFastaToAmplicons(ch_bedFile, ch_refDir)
-    runART(convertFastaToAmplicons.out.amplicon_fastas, ch_bedFile, ch_modelR1, ch_modelR2, ch_depth, ch_fragmentMean, ch_fragmentSD)
+
    
      
 }
