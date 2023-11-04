@@ -44,7 +44,7 @@ process runART {
 
     script:
     """
-    art_illumina -1 ${model_R1} -2 ${model_R2} -i ${amplicon} -f ${depth} -l 150 -p -m ${fragment_mean} -s ${fragment_sd} -o _R
+    art_illumina -1 ${model_R1} -2 ${model_R2} -i ${amplicon_fasta} -f ${depth} -l 150 -p -m ${fragment_mean} -s ${fragment_sd} -o _R
     """
 
 }
