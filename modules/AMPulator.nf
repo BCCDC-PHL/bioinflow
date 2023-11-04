@@ -1,7 +1,7 @@
 process convertFastaToAmplicons {
     tag { sampleName }
 
-    publishDir "${params.outdir}", mode: 'copy', pattern: "amplicon_fastas/*amplicon.fasta"
+    publishDir "${params.outdir}/amplicon_fastas", mode: 'copy', pattern: "*amplicon.fasta"
     
     cpus 1
 
@@ -10,14 +10,36 @@ process convertFastaToAmplicons {
     path(fasta_dir)
 
     output:
-    path('amplicon_fastas/*amplicon.fasta')
+    path('*amplicon.fasta')
 
     script:
 
     """
-    convert_fasta_to_amplicons.py --bed_file ${bed} --reference_directory ${fasta_dir} --output_directory amplicon_fastas
+    convert_fasta_to_amplicons.py --bed_file ${bed} --reference_directory ${fasta_dir} --output_directory .
     """
 
+
+}
+
+process runART {
+
+    tag {sampleName}
+
+    publishDir "${params.outdir}", mode: 'copy', pattern: "amplicon_fastas/*amplicon.fasta"
+
+    cpus 8
+
+    input:
+    path(amplicon_fastas)
+
+    output:
+    path("*fq.qz)
+
+
+    script:
+    """
+    
+    """
 
 
 
