@@ -47,10 +47,7 @@ process runART {
 
     IFS=" " read -ra input_array <<< "${amplicon_fasta}"
 
-    for fasta in "${input_array[@]}"; do
-    echo ${fasta}
-
-    done
+    for fasta in "${input_array[@]}"; do done
 
     
     
