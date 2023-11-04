@@ -10,7 +10,8 @@ process convertFastaToAmplicons {
     path(fasta_dir)
 
     output:
-    path('*amplicon.fasta'), emit: amplicon_fastas
+    set val(amplicon_fasta), file('*amplicon.fasta') into amplicon_fastas
+    // path('*amplicon.fasta'), emit: amplicon_fastas
 
     script:
 
@@ -28,7 +29,8 @@ process runART {
     cpus 8
 
     input:
-    path(amplicon_fasta)
+    // path(amplicon_fasta)
+    file amplicon_fasta
     path(bed)
     path(model_R1)
     path(model_R2)
