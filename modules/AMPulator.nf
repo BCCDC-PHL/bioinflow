@@ -10,7 +10,7 @@ process convertFastaToAmplicons {
     path(fasta_dir)
 
     output:
-    tuple val(amplicon_fasta), file('*amplicon.fasta') into amplicon_fastas
+    tuple val(amplicon_fasta), file('*amplicon.fasta'), emit: amplicon_fastas
     // path('*amplicon.fasta'), emit: amplicon_fastas
 
     script:
