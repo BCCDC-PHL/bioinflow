@@ -31,13 +31,7 @@ process runART {
     publishDir "${params.outdir}/amplicon_fastqs", mode: 'copy', pattern: "*fq"
 
     input:
-    path(amplicon_fasta)
-    path(bed)
-    path(model_R1)
-    path(model_R2)
-    val(depth)
-    val(fragment_mean)
-    val(fragment_sd)
+    tuple path(amplicon_fasta), path(bed), path(model_R1), path(model_R2), val(depth), val(fragment_mean), val(fragment_sd)
     
 
     output:
