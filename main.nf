@@ -41,7 +41,7 @@ workflow {
 
   main:
     convertFastaToAmplicons(ch_bedFile, ch_refDir)
-    ch_ampliconFastas = Channel.fromList(convertFastaToAmplicons.out)
+    ch_ampliconFastas = Channel.of(convertFastaToAmplicons.out)
 
     runART(ch_ampliconFastas, ch_bedFile, ch_modelR1, ch_modelR2, ch_depth, ch_fragmentMean, ch_fragmentSD)
     
