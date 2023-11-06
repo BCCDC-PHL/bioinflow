@@ -10,7 +10,7 @@ process convertFastaToAmplicons {
     path(fasta_dir)
 
     output:
-    Channel.fromPath( '*amplicon.fasta' ), emit: ch_amplicon_fastas
+    Channel.fromPath( '*amplicon.fasta' )
     //path('*amplicon.fasta'), emit: amplicon_fastas
 
     script:
