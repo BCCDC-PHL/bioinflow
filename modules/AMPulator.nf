@@ -6,7 +6,6 @@ process convertFastaToAmplicons {
     cpus 1
 
     input:
-    path(bed)
     path(fasta_dir)
 
     output:

@@ -40,7 +40,7 @@ workflow {
 
 
   main:
-    convertFastaToAmplicons(ch_bedFile, ch_refDir)
+    convertFastaToAmplicons(ch_refDir)
  
 
     runART(convertFastaToAmplicons.out)
