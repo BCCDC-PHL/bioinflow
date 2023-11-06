@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 from Bio import SeqIO
+import os
 
 def convert_bed_to_multi_fasta(bed_file, reference_file):
     amplicon_positions = {}
