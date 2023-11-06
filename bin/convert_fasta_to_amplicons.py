@@ -2,7 +2,7 @@
 import argparse
 from Bio import SeqIO
 
-def convert_bed_to_multi_fasta(bed_file, reference_file, output_file):
+def convert_bed_to_multi_fasta(bed_file, reference_file):
     amplicon_positions = {}
 
     # Read amplicon positions from the bed file
@@ -23,6 +23,10 @@ def convert_bed_to_multi_fasta(bed_file, reference_file, output_file):
                 elif "RIGHT" in name:
                     amplicon_positions[position_key]["end"] = int(end)
 
+    reference_base_name = os.path.splitext(os.path.basename(reference_file))[0]
+    output_file = f"{reference_base_name}_amplicon.fasta"
+
+
     with open(output_file, "w") as output:
         for record in SeqIO.parse(reference_file, "fasta"):
             for amplicon_number, positions in amplicon_positions.items():
@@ -40,7 +44,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert a BED file to multi-FASTA file using a reference FASTA file")
     parser.add_argument("--bed_file", required=True, help="Input BED file")
     parser.add_argument("--reference_file", required=True, help="Path to the reference FASTA file")
-    parser.add_argument("--output_file", required=True, help="Path to the output multi-FASTA file")
+
     args = parser.parse_args()
 
     main(args)
