@@ -38,7 +38,7 @@ def convert_bed_to_multi_fasta(bed_file, reference_file):
                     output.write(amplicon_record)
 
 def main(args):
-    convert_bed_to_multi_fasta(args.bed_file, args.reference_file, args.output_file)
+    convert_bed_to_multi_fasta(args.bed_file, args.reference_file)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert a BED file to multi-FASTA file using a reference FASTA file")
