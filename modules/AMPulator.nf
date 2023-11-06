@@ -11,7 +11,7 @@ process convertFastaToAmplicons {
 
     output:
 
-    path('*amplicon.fasta'), emit: amplicon_fastas
+    path('*amplicon.fasta'), emit: amplicon_fasta
 
     script:
 
