@@ -28,6 +28,8 @@ process runART {
 
     cpus 8
 
+    publishDir "${params.outdir}/amplicon_fastqs", mode: 'copy', pattern: "*fq"
+
     input:
     path(amplicon_fasta)
     path(bed)
