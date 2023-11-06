@@ -16,7 +16,7 @@ process convertFastaToAmplicons {
     script:
 
     """
-    convert_fasta_to_amplicons.py --bed_file ${bed} --reference_directory ${fasta_dir} --output_directory .
+    convert_fasta_to_amplicons.py --bed_file ${bed} --reference_file ${fasta_dir} --output_directory .
     """
 
 
