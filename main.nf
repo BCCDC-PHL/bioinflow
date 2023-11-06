@@ -22,7 +22,7 @@ if (params.profile){
 
 
 ch_bedFile = Channel.fromPath(params.bed)
-ch_refDir = Channel.fromPath(params.ref_dir'/*.fasta')
+ch_refDir = Channel.fromPath(params.ref_dir)
 ch_modelR1 = Channel.fromPath(params.model_R1)
 ch_modelR2 = Channel.fromPath(params.model_R2)
 ch_depth = params.depth
