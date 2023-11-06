@@ -6,7 +6,7 @@ process convertFastaToAmplicons {
     cpus 1
 
     input:
-    path(fasta_dir)
+    path(fasta)
 
     output:
 
@@ -15,7 +15,7 @@ process convertFastaToAmplicons {
     script:
 
     """
-    convert_fasta_to_amplicons.py --bed_file ${bed} --reference_file ${fasta_dir} 
+    convert_fasta_to_amplicons.py --bed_file ${params.bed} --reference_file ${fasta} 
     """
 
 
