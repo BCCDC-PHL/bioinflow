@@ -22,7 +22,7 @@ if (params.profile){
 
 
 ch_bedFile = Channel.fromPath(params.bed)
-ch_refDir = Channel.fromPath(params.ref_dir)
+ch_refDir = Channel.fromPath(params.ref_dir/*.fasta)
 ch_modelR1 = Channel.fromPath(params.model_R1)
 ch_modelR2 = Channel.fromPath(params.model_R2)
 ch_depth = params.depth
@@ -41,7 +41,7 @@ workflow {
 
   main:
     convertFastaToAmplicons(ch_bedFile, ch_refDir)
-    //ch_ampliconFastas = Channel.from()
+ 
 
     runART(convertFastaToAmplicons.out, ch_bedFile, ch_modelR1, ch_modelR2, ch_depth, ch_fragmentMean, ch_fragmentSD)
     
