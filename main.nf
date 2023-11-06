@@ -23,11 +23,11 @@ if (params.profile){
 
 ch_bedFile = Channel.fromPath(params.bed)
 ch_refDir = Channel.fromPath(params.ref_dir)
-ch_modelR1 = Channel.fromPath(params.model_R1)
-ch_modelR2 = Channel.fromPath(params.model_R2)
-ch_depth = params.depth
-ch_fragmentMean = params.fragment_mean
-ch_fragmentSD = params.fragment_sd
+//ch_modelR1 = Channel.fromPath(params.model_R1)
+//ch_modelR2 = Channel.fromPath(params.model_R2)
+//ch_depth = params.depth
+//ch_fragmentMean = params.fragment_mean
+//ch_fragmentSD = params.fragment_sd
 
 
 
@@ -43,7 +43,7 @@ workflow {
     convertFastaToAmplicons(ch_bedFile, ch_refDir)
  
 
-    runART(convertFastaToAmplicons.out, ch_bedFile, ch_modelR1, ch_modelR2, ch_depth, ch_fragmentMean, ch_fragmentSD)
+    runART(convertFastaToAmplicons.out)
     
     
 
