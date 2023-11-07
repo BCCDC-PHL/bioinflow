@@ -58,7 +58,7 @@ process runARTVariableDepths {
 
     cpus 8
 
-    publishDir "${params.outdir}/amplicon_fastqs", mode: 'copy', pattern: "*fq"
+    publishDir "${params.outdir}/amplicon_fastqs/${amplicon_fasta}", mode: 'copy', pattern: "*fq"
 
     input:
     tuple val(sampleName), path(amplicon_fasta)
