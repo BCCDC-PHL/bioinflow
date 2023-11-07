@@ -54,6 +54,7 @@ if (params.profile){
 
 ch_bedFile = Channel.fromPath(params.bed)
 ch_refDir = Channel.fromPath(params.ref_dir_string).map{ tuple( it.baseName.split("\\.")[0], it) }
+ch_ampDepths = Channel.fromPath(params.amplicon_depths)
 
 
 
@@ -70,6 +71,11 @@ workflow {
     if (params.amplicon_depth = 'NO FILE') {
 
     convertFastaToAmplicons(ch_refDir) | runART
+
+    }
+    else{
+
+    convertFastaToAmplicons(ch_refDir) | runARTVariableDepths
 
     }
  
