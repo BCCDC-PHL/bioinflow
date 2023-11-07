@@ -70,10 +70,16 @@ workflow {
 
   main:
 
+    if (params.vary_amplicon_depths) {
+
+    convertFastaToAmplicons(ch_refDir) | runART
+
+    }
+    else {
     
     convertFastaToAmplicons(ch_refDir)
     runARTVariableDepths(convertFastaToAmplicons.out, ch_ampDepths)
-    
+    }
 
     
  
