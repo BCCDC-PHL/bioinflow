@@ -38,7 +38,7 @@ def main(args):
     # Run a subprocess command for each individual FASTA file
     for amplicon_id, depth in amplicon_depths.items():
         input_fasta = os.path.join(output_directory, f'amplicon{amplicon_id}.fasta')
-        subprocess_command = f'art_illumina -1 {args.R1} -2 {args.R2}  -i {input_fasta} -f {depth} -l 150 -p -m {args.m} -s {args.s} -o {amplicon_id}_R'
+        subprocess_command = f'art_illumina -1 {args.R1} -2 {args.R2}  -i {input_fasta} -f {depth} -l {args.l} -p -m {args.m} -s {args.s} -o {amplicon_id}_R'
         subprocess.run(subprocess_command, shell=True)
 
 
@@ -50,6 +50,7 @@ if __name__ == "__main__":
     parser.add_argument('--R2', required=True, help="Error model for R2") 
     parser.add_argument('--m', required=True, help="Genomic fragment mean") 
     parser.add_argument('--s', required=True, help="Genomic fragment standard deviation") 
+    parser.add_argument('--l', required=True, help="Simulated read length")
     args = parser.parse_args()
     main(args)
 
