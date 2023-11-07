@@ -1,5 +1,6 @@
 process AMPulator {
-
+    debug true
+    
     input:
     path(AMP)
 
