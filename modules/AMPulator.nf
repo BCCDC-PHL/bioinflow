@@ -1,13 +1,16 @@
 process AMPulator {
+
+    output:
+      stdout
     
     script:
 
     """
-    cat AMPulator.py
-   
-    """
+  
 
-
+    
+   echo AMPulator.py
+   """
 }
 
 process convertFastaToAmplicons {
