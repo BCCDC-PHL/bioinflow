@@ -1,7 +1,7 @@
 def printHelp() {
   log.info"""
   Usage:
-    nextflow run BCCDC-PHL/AMPulator -profile conda --prefix [prefix] [workflow-options]
+    nextflow run BCCDC-PHL/amplicone -profile conda --prefix [prefix] [workflow-options]
 
   Description:
     <Insert description>

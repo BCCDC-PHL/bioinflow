@@ -36,8 +36,8 @@ log.info header()
 include {printHelp} from './modules/help.nf'
 
 // import subworkflows
-include {convertFastaToAmplicons} from './modules/AMPulator.nf'
-include {runART} from './modules/AMPulator.nf'
+include {convertFastaToAmplicons} from './modules/amplicone.nf'
+include {runART} from './modules/amplicone.nf'
 
 
 
