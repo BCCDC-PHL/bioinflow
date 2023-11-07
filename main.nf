@@ -7,10 +7,10 @@ nextflow.enable.dsl = 2
 def header() {
 
 return """
-
+TEST
 =========================================================================
-data directory: ${params.work_dir}
-output data: ${params.work_dir}results/
+data directory: ${params.outdir}
+output data: ${params.outdir}results/
 
 """
 }
