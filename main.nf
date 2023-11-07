@@ -3,7 +3,7 @@
 nextflow.enable.dsl = 2
 
 
-
+// function and log info code obtained from BCCDC-PHL/covflo by Jessica Caleta
 def header() {
 
 return """
