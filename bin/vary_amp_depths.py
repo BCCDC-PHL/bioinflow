@@ -45,6 +45,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process amplicons with specified depths")
     parser.add_argument('--fasta', required=True, help="Path to the input multi-FASTA file")
     parser.add_argument('--depths', required=True, help="Path to the amplicon depths CSV file")
+    parser.add_argument('-1, required=True, help="Error model for R1")           
+    parser.add_argument('-2, required=True, help="Error model for R2") 
+                        
+    
     args = parser.parse_args()
     main(args)
 
