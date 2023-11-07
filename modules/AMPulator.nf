@@ -3,7 +3,7 @@ process AMPulator {
     script:
 
     """
-    AMPulator.py
+    cat AMPulator.py
    
     """
 
