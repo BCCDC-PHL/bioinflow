@@ -1,3 +1,15 @@
+process AMPulator {
+    
+    script:
+
+    """
+    AMPulator.py
+   
+    """
+
+
+}
+
 process convertFastaToAmplicons {
     tag { sampleName }
 
