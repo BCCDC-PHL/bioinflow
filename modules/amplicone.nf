@@ -16,6 +16,7 @@ process convertFastaToAmplicons {
 
     """
     convert_fasta_to_amplicons.py --bed_file ${params.bed} --reference_file ${fasta} 
+    
     """
 
 
@@ -27,7 +28,7 @@ process runART {
 
     cpus 8
 
-    publishDir "${params.outdir}/amplicon_fastqs", mode: 'copy', pattern: "*fq"
+    publishDir "${params.outdir}/amplicon_fastqs", mode: 'copy', pattern: "*fq.gz"
 
     input:
     tuple val(sampleName), path(amplicon_fasta)
@@ -42,7 +43,8 @@ process runART {
 
 
     art_illumina -1 ${params.model_R1} -2 ${params.model_R2} -i ${amplicon_fasta} -f ${params.depth} -l 150 -p -m ${params.fragment_mean} -s ${params.fragment_sd} -o ${amplicon_fasta}_R
-  
+
+    gzip *.fq
 
     
     
