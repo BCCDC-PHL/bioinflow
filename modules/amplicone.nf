@@ -51,3 +51,35 @@ process runART {
 }
 
 
+
+process runARTVariableDepths {
+
+    tag {sampleName}
+
+    cpus 8
+
+    publishDir "${params.outdir}/amplicon_fastqs", mode: 'copy', pattern: "*fq"
+
+    input:
+    tuple val(sampleName), path(amplicon_fasta)
+    path(amplicon_depths)
+    
+
+    output:
+    tuple val(sampleName), path("*fq")
+
+
+    script:
+    """
+
+
+    art_illumina -1 ${params.model_R1} -2 ${params.model_R2} -i ${amplicon_fasta} -f ${params.depth} -l 150 -p -m ${params.fragment_mean} -s ${params.fragment_sd} -o ${amplicon_fasta}_R
+  
+
+    
+    
+    """
+
+}
+
+
