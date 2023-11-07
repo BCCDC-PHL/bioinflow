@@ -62,7 +62,7 @@ process runARTVariableDepths {
 
     input:
     tuple val(sampleName), path(amplicon_fasta)
-    path(amplicon_depths)
+
     
 
     output:
@@ -73,7 +73,7 @@ process runARTVariableDepths {
     """
 
 
-    vary_amp_depths.py --fasta ${amplicon_fasta} --depths ${amplicon_depths} --R1 ${params.model_R1} --R2 ${params.model_R2} --m ${params.fragment_mean} --s ${params.fragment_sd}
+    vary_amp_depths.py --fasta ${amplicon_fasta} --depths ${params.amplicon_depths} --R1 ${params.model_R1} --R2 ${params.model_R2} --m ${params.fragment_mean} --s ${params.fragment_sd}
   
 
     
