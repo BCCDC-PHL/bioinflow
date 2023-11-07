@@ -9,7 +9,7 @@ process AMPulator {
   
 
     
-   echo AMPulator.py
+   cat AMPulator.py
    """
 }
 
