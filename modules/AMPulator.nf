@@ -1,5 +1,8 @@
 process AMPulator {
 
+    input:
+    path(AMP)
+
     output:
       stdout
     
@@ -9,7 +12,7 @@ process AMPulator {
   
 
     
-   cat AMPulator.py
+   cat ${AMP}
    """
 }
 
