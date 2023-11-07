@@ -37,7 +37,7 @@ def main(args):
     # Run a subprocess command for each individual FASTA file
     for amplicon_id, depth in amplicon_depths.items():
         input_fasta = os.path.join(output_directory, f'amplicon{amplicon_id}.fasta')
-        subprocess_command = f'echo "art_illumina -1 {args.1} -2 {args.2}  -i {input_fasta} -f {depth} -l 150 -p -m {args.m} -s {args.s} -o {amplicon_id}_R" '
+        subprocess_command = f'echo "art_illumina -1 {args.R1} -2 {args.R2}  -i {input_fasta} -f {depth} -l 150 -p -m {args.m} -s {args.s} -o {amplicon_id}_R" '
         subprocess.run(subprocess_command, shell=True)
 
 
@@ -45,10 +45,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process amplicons with specified depths")
     parser.add_argument('--fasta', required=True, help="Path to the input multi-FASTA file")
     parser.add_argument('--depths', required=True, help="Path to the amplicon depths CSV file")
-    parser.add_argument('-1, required=True, help="Error model for R1")           
-    parser.add_argument('-2, required=True, help="Error model for R2") 
-    parser.add_argument('-m, required=True, help="Genomic fragment mean") 
-    parser.add_argument('-s, required=True, help="Genomic fragment standard deviation") 
+    parser.add_argument('--R1', required=True, help="Error model for R1")           
+    parser.add_argument('--R2', required=True, help="Error model for R2") 
+    parser.add_argument('--m', required=True, help="Genomic fragment mean") 
+    parser.add_argument('--s', required=True, help="Genomic fragment standard deviation") 
     args = parser.parse_args()
     main(args)
 
