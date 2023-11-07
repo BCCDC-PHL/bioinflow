@@ -48,7 +48,7 @@ if (params.profile){
 
 ch_bedFile = Channel.fromPath(params.bed)
 ch_refDir = Channel.fromPath(params.ref_dir_string).map{ tuple( it.baseName.split("\\.")[0], it) }
-ch_AMPulator = Channel.fromPath("${baseDir}/bin/AMPulator.txt")
+
 
 
 
@@ -61,7 +61,7 @@ workflow {
 
 
   main:
-    AMPulator(ch_AMPulator)
+
     convertFastaToAmplicons(ch_refDir) | runART
  
 
