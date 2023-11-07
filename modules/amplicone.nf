@@ -35,7 +35,7 @@ process runART {
     
 
     output:
-    tuple val(sampleName), path("*fq")
+    tuple val(sampleName), path("*fq.gz")
 
 
     script:
