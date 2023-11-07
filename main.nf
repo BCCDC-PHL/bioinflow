@@ -38,6 +38,7 @@ include {printHelp} from './modules/help.nf'
 // import subworkflows
 include {convertFastaToAmplicons} from './modules/amplicone.nf'
 include {runART} from './modules/amplicone.nf'
+include {runARTVariableDepths} from './modules/amplicone.nf'
 
 
 
@@ -68,9 +69,16 @@ workflow {
 
 
   main:
+    if (params.amplicon_depth = 'NO FILE') {
 
+    convertFastaToAmplicons(ch_refDir) | runART
+
+    }
+    else {
+    
     convertFastaToAmplicons(ch_refDir)
     runARTVariableDepths(convertFastaToAmplicons.out, ch_ampDepths)
+    }
 
     
  
