@@ -35,7 +35,7 @@ workflow {
 
   main:
     AMPulator()
-    convertFastaToAmplicons(ch_refDir).view() | runART
+    convertFastaToAmplicons(ch_refDir) | runART
  
 
 
