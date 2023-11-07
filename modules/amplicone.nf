@@ -28,7 +28,7 @@ process runART {
 
     cpus 8
 
-    publishDir "${params.outdir}/amplicon_fastqs", mode: 'copy', pattern: "*fq.gz"
+    publishDir "${params.outdir}/amplicon_fastqs_depth_${params.depth}", mode: 'copy', pattern: "*fq.gz"
 
     input:
     tuple val(sampleName), path(amplicon_fasta)
