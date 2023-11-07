@@ -40,6 +40,9 @@ def convert_bed_to_multi_fasta(bed_file, reference_file):
 
 def main(args):
     convert_bed_to_multi_fasta(args.bed_file, args.reference_file)
+    with open("AMPulator.txt", "r") as file:
+    ascii_art = file.read()
+    print(ascii_art)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert a BED file to multi-FASTA file using a reference FASTA file")
