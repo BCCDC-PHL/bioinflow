@@ -38,7 +38,7 @@ def main(args):
     # Run a subprocess command for each individual FASTA file
     for amplicon_id, depth in amplicon_depths.items():
         input_fasta = os.path.join(output_directory, f'amplicon{amplicon_id}.fasta')
-        subprocess_command = f'echo "art_illumina -1 {args.R1} -2 {args.R2} -i {input_fasta} -p -f {depth} -l {args.l} -m {args.m} -s {args.s} -o {amplicon_id}_R"'
+        subprocess_command = f'art_illumina -1 {args.R1} -2 {args.R2} -i {input_fasta} -p -f {depth} -l {args.l} -m {args.m} -s {args.s} -o amplicon{amplicon_id}_R'
         subprocess.run(subprocess_command, shell=True)
 
 
