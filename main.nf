@@ -78,7 +78,7 @@ workflow {
     }
     else {
     convertFastaToAmplicons(ch_refDir) | runART
-    )
+    
     }
 
     
