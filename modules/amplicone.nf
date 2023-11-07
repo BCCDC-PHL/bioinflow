@@ -42,7 +42,7 @@ process runART {
     """
 
 
-    art_illumina -1 ${params.model_R1} -2 ${params.model_R2} -i ${amplicon_fasta} -f ${params.depth} -l 150 -p -m ${params.fragment_mean} -s ${params.fragment_sd} -o ${amplicon_fasta}_R
+    art_illumina -1 ${params.model_R1} -2 ${params.model_R2} -i ${amplicon_fasta} -f ${params.depth} -l 150 -p -m ${params.fragment_mean} -s ${params.fragment_sd} -o ${sampleName}_R
 
     gzip *.fq
 
@@ -77,8 +77,8 @@ process runARTVariableDepths {
 
     vary_amp_depths.py --fasta ${amplicon_fasta} --depths ${params.amplicon_depths} --R1 ${params.model_R1} --R2 ${params.model_R2} --l ${params.read_length} --m ${params.fragment_mean} --s ${params.fragment_sd}
 
-    cat *R1.fq > ${amplicon_fasta}_combined_R1.fq
-    cat *R2.fq > ${amplicon_fasta}_combined_R2.fq
+    cat *R1.fq > ${sampleName}_combined_R1.fq
+    cat *R2.fq > ${sampleName}_combined_R2.fq
     gzip *combined*.fq 
 
     
