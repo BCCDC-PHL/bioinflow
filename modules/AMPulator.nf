@@ -1,6 +1,6 @@
 process AMPulator {
     debug true
-    
+
     input:
     path(AMP)
 
@@ -13,7 +13,7 @@ process AMPulator {
   
 
     
-   cat ${AMP}
+   echo "cat ${AMP}"
    """
 }
 
