@@ -6,11 +6,11 @@ process convertFastaToAmplicons {
     cpus 1
 
     input:
-    path(fasta)
+    tuple val(sampleName), path(fasta)
 
     output:
 
-    path('*amplicon.fasta')
+    tuple val(sampleName), path('*amplicon.fasta')
 
     script:
 
@@ -30,11 +30,11 @@ process runART {
     publishDir "${params.outdir}/amplicon_fastqs", mode: 'copy', pattern: "*fq"
 
     input:
-    path(amplicon_fasta)
+    tuple val(sampleName), path(amplicon_fasta)
     
 
     output:
-    path("*fq")
+    tuple val(sampleName), path("*fq")
 
 
     script:
