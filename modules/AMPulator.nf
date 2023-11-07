@@ -1,22 +1,3 @@
-process AMPulator {
-
-
-    input:
-    path(AMP)
-
-    output:
-      stdout
-    
-    script:
-
-    """
-  
-
-    
-   echo "cat ${AMP}"
-   """
-}
-
 process convertFastaToAmplicons {
     tag { sampleName }
 

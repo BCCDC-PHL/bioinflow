@@ -9,8 +9,8 @@ def header() {
 return """
 TEST
 =========================================================================
-data directory: ${params.outdir}
-output data: ${params.outdir}results/
+output directory: ${params.outdir}
+
 
 """
 }
