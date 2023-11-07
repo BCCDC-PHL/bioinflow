@@ -69,16 +69,11 @@ workflow {
 
 
   main:
-    if (params.amplicon_depths = 'NO_FILE') {
 
-    convertFastaToAmplicons(ch_refDir) | runART
-
-    }
-    else {
     
     convertFastaToAmplicons(ch_refDir)
     runARTVariableDepths(convertFastaToAmplicons.out, ch_ampDepths)
-    }
+    
 
     
  
