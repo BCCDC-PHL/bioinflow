@@ -73,9 +73,10 @@ workflow {
     convertFastaToAmplicons(ch_refDir) | runART
 
     }
-    else{
+    else {
 
-    convertFastaToAmplicons(ch_refDir) | runARTVariableDepths
+    convertFastaToAmplicons(ch_refDir)
+    runARTVariableDepths(convertFastaToAmplicons.out, ch_ampDepths)
 
     }
  
