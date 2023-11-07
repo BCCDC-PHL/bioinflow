@@ -60,7 +60,7 @@ process runARTVariableDepths {
 
     cpus 8
 
-    publishDir "${params.outdir}/amplicon_fastqs/${amplicon_fasta}", mode: 'copy', pattern: "*fq.gz"
+    publishDir "${params.outdir}/amplicon_varied_depths_fastqs/", mode: 'copy', pattern: "*fq.gz"
 
     input:
     tuple val(sampleName), path(amplicon_fasta)
@@ -77,9 +77,9 @@ process runARTVariableDepths {
 
     vary_amp_depths.py --fasta ${amplicon_fasta} --depths ${params.amplicon_depths} --R1 ${params.model_R1} --R2 ${params.model_R2} --l ${params.read_length} --m ${params.fragment_mean} --s ${params.fragment_sd}
 
-    cat *R1.fq > ${sampleName}_combined_R1.fq
-    cat *R2.fq > ${sampleName}_combined_R2.fq
-    gzip *combined*.fq 
+    cat *R1.fq > ${sampleName}_R1.fq
+    cat *R2.fq > ${sampleName}_R2.fq
+    gzip *${sampleName}*.fq 
 
     
     
