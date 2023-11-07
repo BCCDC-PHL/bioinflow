@@ -27,7 +27,7 @@ def main(args):
             if line.startswith('>'):
                 if current_amplicon:
                     amplicon_id = current_amplicon[1:]
-                    output_file = os.path.join(output_directory, f'amplicon{amplicon_id}.fasta')
+                    output_file = os.path.join(output_directory, f'{amplicon_id}.fasta')
                     with open(output_file, 'w') as output_fasta:
                         output_fasta.writelines(current_lines)
                     current_lines = []
