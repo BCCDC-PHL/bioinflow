@@ -73,7 +73,7 @@ process runARTVariableDepths {
     """
 
 
-    art_illumina -1 ${params.model_R1} -2 ${params.model_R2} -i ${amplicon_fasta} -f ${params.depth} -l 150 -p -m ${params.fragment_mean} -s ${params.fragment_sd} -o ${amplicon_fasta}_R
+    vary_amp_depths.py --fasta {amplicon_fasta} --depths {amplicon_depths} --R1 ${params.model_R1} --R2 ${params.model_R2} --m ${params.fragment_mean} --s ${params.fragment_sd}
   
 
     
