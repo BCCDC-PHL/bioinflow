@@ -2,6 +2,31 @@
 
 nextflow.enable.dsl = 2
 
+
+def header() {
+
+return """
+     _    __  __ ____        _       _             
+    / \  |  \/  |  _ \ _   _| | __ _| |_ ___  _ __ 
+   / _ \ | |\/| | |_) | | | | |/ _` | __/ _ \| '__|
+  / ___ \| |  | |  __/| |_| | | (_| | || (_) | |   
+ /_/   \_\_|  |_|_|    \__,_|_|\__,_|\__\___/|_|  
+=========================================================================
+data directory: ${params.work_dir}
+output fastqs: ${params.work_dir}results/amplicon_fastqs
+
+    """
+}
+
+/**
+---------------------------------------------------------------------------------
+program introduction
+---------------------------------------------------------------------------------
+*/
+
+// this prints program header with mandatory input and output locations
+log.info header()
+
 // include modules
 include {printHelp} from './modules/help.nf'
 
@@ -28,29 +53,7 @@ ch_AMPulator = Channel.fromPath("${baseDir}/bin/AMPulator.txt")
 
 
 
-def header() {
 
-return """
-     _    __  __ ____        _       _             
-    / \  |  \/  |  _ \ _   _| | __ _| |_ ___  _ __ 
-   / _ \ | |\/| | |_) | | | | |/ _` | __/ _ \| '__|
-  / ___ \| |  | |  __/| |_| | | (_| | || (_) | |   
- /_/   \_\_|  |_|_|    \__,_|_|\__,_|\__\___/|_|  
-=========================================================================
-data directory: ${params.work_dir}
-output fastqs: ${params.work_dir}results/amplicon_fastqs
-
-"""
-}
-
-/**
----------------------------------------------------------------------------------
-program introduction
----------------------------------------------------------------------------------
-*/
-
-// this prints program header with mandatory input and output locations
-log.info header()
 
 
 // main workflow
