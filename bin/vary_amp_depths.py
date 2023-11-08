@@ -40,7 +40,8 @@ def main(args):
         input_fasta = os.path.join(output_directory, f'amplicon{amplicon_id}.fasta')
         subprocess_command = f'art_illumina -1 {args.R1} -2 {args.R2} -i {input_fasta} -p -f {depth} -l {args.l} -m {args.m} -s {args.s} -o amplicon{amplicon_id}_R'
         subprocess.run(subprocess_command, shell=True)
-
+        subprocess_command2 = f'add_reads_to_start_end.py --fasta ${input_fasta} --r1 amplicon{amplicon_id}_R1.fq --r2 amplicon{amplicon_id}_R2.fq --depth {depth}'
+        subprocess.run(subprocess_command2, shell=True)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process amplicons with specified depths")

@@ -83,8 +83,6 @@ process runARTVariableDepths {
     cat *R2.fq > ${sampleName}_R2.fq
     gzip *${sampleName}*.fq 
 
-    add_reads_to_start_end.py --fasta ${amplicon_fasta} --r1 ${sampleName}_R2.fq.gz --r2 ${sampleName}_R2.fq.gz --depth ${params.depth}
-
     
     
     """
