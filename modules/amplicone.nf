@@ -45,7 +45,7 @@ process runART {
     art_illumina -1 ${params.model_R1} -2 ${params.model_R2} -i ${amplicon_fasta} -f ${params.depth} -l 150 -p -m ${params.fragment_mean} -s ${params.fragment_sd} -o ${sampleName}_depth_${params.depth}_R
 
     gzip *.fq
-
+    echo "adding reads at ends"
     add_reads_to_start_end.py --fasta ${amplicon_fasta} --r1 ${sampleName}_depth_${params.depth}_R1.fq.gz --r2 ${sampleName}_depth_${params.depth}_R2.fq.gz --depth ${params.depth}
 
     
