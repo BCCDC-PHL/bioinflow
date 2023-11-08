@@ -43,14 +43,14 @@ Important config options are:
 
 | Option                           | Default  | Description                                                                                                         |
 |:---------------------------------|---------:|--------------------------------------------------------------------------------------------------------------------:|
-| `vary_amplicon_depths`       | `false`    | Target depth of coverage to normalize to prior to alignment                                                         |
-| `amplicon_depths`          | `NO_FILE`      | Minimum depth of coverage to normalize to prior to alignment                                                        |
-| `depth`                        | `50`     | Length of reads to keep after primer trimming                                                                       |
-| `fragment_mean`                  | `600`     | Sliding window quality threshold for keeping reads after primer trimming                                            |
-| `fragment_sd`            | `75`   | Allele frequency threshold for ambiguous variant                                                                    |
-| `read_length`               | `150`   | Allele frequency threshold for unambiguous variant                                                                  |
-| `model_R1`                    | `NO_FILE`     | Minimum coverage depth to call variant                                                                              |
-| `model_R2`                    | `NO_FILE`     | Minimum coverage depth to call variant                                                                              |
+| `vary_amplicon_depths`       | `false`    | Set to true if user is supplying individual amplicon depths                                                         |
+| `amplicon_depths`          | `NO_FILE`      | A CSV file containing "amplicon" and "depth" for each amplicon in primer.bed file                                                      |
+| `depth`                        | `50`     | Desired depth for reads if not supplying individual amplicon depths                                                                       |
+| `fragment_mean`                  | `600`     | Mean genomic fragment size                                            |
+| `fragment_sd`            | `75`   | Standard deviation of genomic fragment size                                                                    |
+| `read_length`               | `150`   | Simulated read length                                                                 |
+| `model_R1`                    | `NO_FILE`     | Error profile of R1 reads                                                                              |
+| `model_R2`                    | `NO_FILE`     | Error profile of R2 reads                                                                              |
 
 #### Output
 A subdirectory for each process in the workflow is created in `--outdir`. 
