@@ -68,20 +68,22 @@ def write_reads_to_fastq(read_generator, fastq_file, reverse=False):
 
 
 def main(args):
-    start_seqs, end_seqs = extract_end_sequences(args.fasta)
+    for amplicon in SeqIO.parse(args.fasta, "fasta"):
 
-    write_reads_to_fastq(generate_reads(start_seqs, args.depth), args.r1)
-    write_reads_to_fastq(generate_reads(start_seqs, args.depth, reverse=True), args.r2)
+        start_seqs, end_seqs = extract_end_sequences(amplicon)
 
-    write_reads_to_fastq(generate_reads(end_seqs, args.depth), args.r1)
-    write_reads_to_fastq(generate_reads(end_seqs, args.depth, reverse=True), args.r2)
+        write_reads_to_fastq(generate_reads(start_seqs, args.depth), args.r1)
+        write_reads_to_fastq(generate_reads(start_seqs, args.depth, reverse=True), args.r2)
+
+        write_reads_to_fastq(generate_reads(end_seqs, args.depth), args.r1)
+        write_reads_to_fastq(generate_reads(end_seqs, args.depth, reverse=True), args.r2)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-	parser.add_argument('fasta')
-	parser.add_argument('r1')
-	parser.add_argument('r2')
-	parser.add_argument('depth', type=int)
+	parser.add_argument('--fasta', required=True, help="Path to the input multi-FASTA file")
+	parser.add_argument('--r1', required=True, help="R1 of ART simulated fastq")
+	parser.add_argument('--r2', required=True, help="R2 of ART simulated fastq")
+	parser.add_argument('--depth', type=int, required=True, help="depth of start and end reads")
     args = parser.parse_args()
     main(args)
