@@ -5,7 +5,7 @@
 
 ```mermaid
 flowchart TD
-    fasta[Fasta directory] --> ampToFasta[convertFastaToAmplicons]
+    fasta[fasta directory] --> ampToFasta[convertFastaToAmplicons]
     primer_bed[primer.bed] --> ampToFasta[convertFastaToAmplicons]
     ampToFasta --> ART[runART] --> fastq[fastq]
     amplicon_depths[amplicon_depths.csv] --> VariableART[runArtVariableDepths]
