@@ -62,7 +62,7 @@ def write_reads_to_fastq(read_generator, fastq_file, reverse=False):
             SeqIO.write(read_generator, outfile, "fastq")
 
 def main(args):
-    for amplicon in SeqIO.parse(args.fasta, "fasta"):
+    for amplicon in SeqIO.parse(args.fasta, "fasta"): # Added for script to run for each amplicon
         start_seqs, end_seqs = extract_end_sequences(amplicon)
 
         write_reads_to_fastq(generate_reads(start_seqs, args.depth), args.r1)
