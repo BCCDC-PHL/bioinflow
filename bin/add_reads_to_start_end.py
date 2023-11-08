@@ -35,7 +35,7 @@ def reverse_complement(record):
             
     return reversed_record
 
-def generate_reads(sequences, depth=80, reverse=False):
+def generate_reads(sequences, depth, reverse=False):
     # Assuming you want to generate overlapping reads to cover the entire region
     suffix = '/1' if not reverse else "/2"
 
