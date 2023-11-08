@@ -68,8 +68,8 @@ def main(args):
         write_reads_to_fastq(generate_reads(start_seqs, args.depth), args.r1)
         write_reads_to_fastq(generate_reads(start_seqs, args.depth, reverse=True), args.r2)
 
-        write_reads_to_fastq(generate_reads(end_seqs, args.depth), args.r1)  # Issue here
-        write_reads_to_fastq(generate_reads(end_seqs, args.depth, reverse=True), args.r2)  # Issue here
+        write_reads_to_fastq(generate_reads(end_seqs, args.depth), args.r1)  
+        write_reads_to_fastq(generate_reads(end_seqs, args.depth, reverse=True), args.r2)  
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
