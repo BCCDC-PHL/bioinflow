@@ -15,15 +15,15 @@ def extract_end_sequences(fasta_file, length=100):
     for r in SeqIO.parse(fasta_file, 'fasta'):
         record1 = copy.deepcopy(r)
         record2 = copy.deepcopy(r)
-
+     
         record1.seq = record1.seq[0:length]
         start_reads += [record1]
 
         record2.seq = record2.seq[-length:]
         end_reads += [record2]
-
+  
     return start_reads, end_reads
-
+    
 def reverse_complement(record):
     # Create a new SeqRecord with the reversed sequence and copy over the ID, name, and description
     reversed_record = SeqRecord(record.seq.reverse_complement(), id=record.id, name=record.name, description=record.description)
@@ -35,7 +35,7 @@ def reverse_complement(record):
             
     return reversed_record
 
-def generate_reads(sequences, depth, reverse=False):
+def generate_reads(sequences, depth=500, reverse=False):
     # Assuming you want to generate overlapping reads to cover the entire region
     suffix = '/1' if not reverse else "/2"
 
@@ -45,7 +45,7 @@ def generate_reads(sequences, depth, reverse=False):
 
         for i in range(0, depth*2, 2):
             sequence = copy.deepcopy(s)
-            sequence.id = id + "-X" + str(i) + suffix
+            sequence.id = id + "-X" + str(i) + suffix + "TEST"
             sequence.seq = sequence.seq if not reverse else sequence.seq.reverse_complement()
             sequence.name = sequence.id
             sequence.description = ""
@@ -62,18 +62,18 @@ def write_reads_to_fastq(read_generator, fastq_file, reverse=False):
             SeqIO.write(read_generator, outfile, "fastq")
 
 def main(args):
-    for amplicon in SeqIO.parse(args.fasta, "fasta"): # Added for script to run for each amplicon
-        start_seqs, end_seqs = extract_end_sequences(amplicon)
+   
+    start_seqs, end_seqs = extract_end_sequences(args.fasta)
 
-        write_reads_to_fastq(generate_reads(start_seqs, args.depth), args.r1)
-        write_reads_to_fastq(generate_reads(start_seqs, args.depth, reverse=True), args.r2)
+    write_reads_to_fastq(generate_reads(start_seqs, args.depth), args.r1)
+    write_reads_to_fastq(generate_reads(start_seqs, args.depth, reverse=True), args.r2)
 
-        write_reads_to_fastq(generate_reads(end_seqs, args.depth), args.r1)  
-        write_reads_to_fastq(generate_reads(end_seqs, args.depth, reverse=True), args.r2)  
+    write_reads_to_fastq(generate_reads(end_seqs, args.depth), args.r1)  
+    write_reads_to_fastq(generate_reads(end_seqs, args.depth, reverse=True), args.r2)  
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--fasta', required=True, help="Path to the input multi-FASTA file")
+    parser.add_argument('--fasta', type=argparse.FileType('r'), required=True, help="Path to the input multi-FASTA file")
     parser.add_argument('--r1', required=True, help="R1 of ART simulated fastq")
     parser.add_argument('--r2', required=True, help="R2 of ART simulated fastq")
     parser.add_argument('--depth', type=int, required=True, help="depth of start and end reads")
