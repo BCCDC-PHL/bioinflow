@@ -46,7 +46,7 @@ process runART {
 
     gzip *.fq
     echo "adding reads at ends"
-    add_reads_to_start_end.py --fasta ${amplicon_fasta} --r1 ${sampleName}_depth_${params.depth}_R1.fq.gz --r2 ${sampleName}_depth_${params.depth}_R2.fq.gz --depth ${params.depth}
+    add_reads_to_start_end.py --fasta ${amplicon_fasta} --r1 ${sampleName}_depth_${params.depth}_R1.fq.gz --r2 ${sampleName}_depth_${params.depth}_R2.fq.gz --depth ${params.depth} --end_length ${params.end_length}
 
     
     
