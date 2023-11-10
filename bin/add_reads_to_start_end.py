@@ -8,7 +8,7 @@ import gzip
 import copy 
 import argparse
 
-def extract_end_sequences(fasta_file, length=100):
+def extract_end_sequences(fasta_file, length):
     start_reads = []
     end_reads = []
 
@@ -35,7 +35,7 @@ def reverse_complement(record):
             
     return reversed_record
 
-def generate_reads(sequences, depth=500, reverse=False):
+def generate_reads(sequences, depth, reverse=False):
     # Assuming you want to generate overlapping reads to cover the entire region
     suffix = '/1' if not reverse else "/2"
 
@@ -45,7 +45,7 @@ def generate_reads(sequences, depth=500, reverse=False):
 
         for i in range(0, depth*2, 2):
             sequence = copy.deepcopy(s)
-            sequence.id = id + "-X" + str(i) + suffix + "TEST"
+            sequence.id = id + "-X" + str(i) + suffix 
             sequence.seq = sequence.seq if not reverse else sequence.seq.reverse_complement()
             sequence.name = sequence.id
             sequence.description = ""
@@ -63,7 +63,7 @@ def write_reads_to_fastq(read_generator, fastq_file, reverse=False):
 
 def main(args):
    
-    start_seqs, end_seqs = extract_end_sequences(args.fasta)
+    start_seqs, end_seqs = extract_end_sequences(args.fasta, args.end_length)
 
     write_reads_to_fastq(generate_reads(start_seqs, args.depth), args.r1)
     write_reads_to_fastq(generate_reads(start_seqs, args.depth, reverse=True), args.r2)
@@ -77,5 +77,6 @@ if __name__ == "__main__":
     parser.add_argument('--r1', required=True, help="R1 of ART simulated fastq")
     parser.add_argument('--r2', required=True, help="R2 of ART simulated fastq")
     parser.add_argument('--depth', type=int, required=True, help="depth of start and end reads")
+    parser.add_argument('--end_length, type=int, default=100, help="length of ends to add extra depth for")
     args = parser.parse_args()
     main(args)
