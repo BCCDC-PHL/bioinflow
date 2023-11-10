@@ -40,7 +40,7 @@ def main(args):
         input_fasta = os.path.join(output_directory, f'amplicon{amplicon_id}.fasta')
         subprocess_command = f'art_illumina -1 {args.R1} -2 {args.R2} -i {input_fasta} -p -f {depth} -l {args.l} -m {args.m} -s {args.s} -o amplicon{amplicon_id}_R'
         subprocess.run(subprocess_command, shell=True)
-        subprocess_command2 = f'add_reads_to_start_end.py --fasta ${input_fasta} --r1 amplicon{amplicon_id}_R1.fq --r2 amplicon{amplicon_id}_R2.fq --depth {depth}'
+        subprocess_command2 = f'add_reads_to_start_end.py --fasta ${input_fasta} --r1 amplicon{amplicon_id}_R1.fq --r2 amplicon{amplicon_id}_R2.fq --depth {depth} --end_length {args.end_length}'
         subprocess.run(subprocess_command2, shell=True)
 
 if __name__ == "__main__":
@@ -52,6 +52,7 @@ if __name__ == "__main__":
     parser.add_argument('--m', required=True, help="Genomic fragment mean") 
     parser.add_argument('--s', required=True, help="Genomic fragment standard deviation") 
     parser.add_argument('--l', required=True, help="Simulated read length")
+    parser.add_argument('--end_length', type=int, default=100, help="length of ends to add extra depth for")
     args = parser.parse_args()
     main(args)
 
