@@ -3,7 +3,10 @@ process convertFastaToAmplicons {
 
     publishDir "${params.outdir}/amplicon_fastas", mode: 'copy', pattern: "*amplicon.fasta"
     
-    cpus 1
+    //cpus 1
+    executor 'local'
+
+    
 
     input:
     tuple val(sampleName), path(fasta)
