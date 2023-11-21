@@ -12,6 +12,8 @@ def convert_bed_to_multi_fasta(bed_file, fasta_file):
             parts = line.strip().split()
             if len(parts) == 6:
                 chrom, start, end, name, primer_pool, strand = parts
+            if len(parts) == 7:
+                chrom, start, end, name, primer_pool, strand, primer_seqs = parts
 
                 amplicon_number = name.split("_")[-2]
                 position_key = f"amplicon{amplicon_number}"
@@ -34,7 +36,7 @@ def convert_bed_to_multi_fasta(bed_file, fasta_file):
                 start = positions["start"]
                 end = positions["end"]
                 if start is not None and end is not None:
-                    amplicon_sequence = record.seq[start - 1 : end]
+                    amplicon_sequence = record.seq[start : end]
                     amplicon_record = f">{amplicon_number}\n{amplicon_sequence}\n"
                     output.write(amplicon_record)
 

@@ -77,6 +77,6 @@ if __name__ == "__main__":
     parser.add_argument('--r1', required=True, help="R1 of ART simulated fastq")
     parser.add_argument('--r2', required=True, help="R2 of ART simulated fastq")
     parser.add_argument('--depth', type=int, required=True, help="depth of start and end reads")
-    parser.add_argument('--end_length, type=int, default=100, help="length of ends to add extra depth for")
+    parser.add_argument('--end_length', type=int, default=100, help="length of ends to add extra depth for")
     args = parser.parse_args()
     main(args)
