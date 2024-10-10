@@ -5,6 +5,8 @@ process convertFastaToAmplicons {
     
     cpus 1
 
+    
+
     input:
     tuple val(sampleName), path(fasta)
 
