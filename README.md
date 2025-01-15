@@ -1,26 +1,15 @@
-# Amplicone - Amplicon rEad simulator 
+# bioinflow
 
-A Nextflow pipeline for running [ART](https://doi.org/10.1093/bioinformatics/btr708) with modifications to support amplicon read simulations and the option to have user supplied depths of each amplicon. 
+A Nextflow pipeline for providing public health bioinfo
 
 #### Introduction
 
-This pipeline uses [ART](https://doi.org/10.1093/bioinformatics/btr708) to generate simulated reads from an input fasta file. Given a fasta and primer bed file, the pipeline will generate amplicon-specific reads. Optionally, the user can provide a CSV file specifying individual amplicon depths. If not specified, amplicon reads will be generated in equal proportions based on the supplied depth parameter. 
-
-```mermaid
-flowchart TD
-    fasta[fasta directory] --> ampToFasta[convertFastaToAmplicons]
-    primer_bed[primer.bed] --> ampToFasta[convertFastaToAmplicons]
-    ampToFasta --> ART[runART] --> fastq[fastq]
-    amplicon_depths[amplicon_depths.csv] --> VariableART[runArtVariableDepths]
-    ampToFasta --> VariableART[runArtVariableDepths] --> VariableFastq[fastq with user specified individual amplicon depths]
-```
 
 
 #### Quick-start
 
 ```
-nextflow run BCCDC-PHL/amplicone -profile conda \
-  --bed /path/to/primers.bed \
+nextflow run BCCDC-PHL/bioinflow -profile conda \
   --fasta_dir /path/to/fasta_directory \
   --model_R1 /path/to/error_model_R1 \
   --model_R2 /path/to/error_model_R2 \
