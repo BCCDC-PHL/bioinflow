@@ -1,4 +1,4 @@
-# bioinflow
+![image](pics/bioinflow_logo.png)
 
 A Nextflow pipeline for providing public health bioinfo
 
