@@ -10,10 +10,9 @@ A Nextflow pipeline for providing public health bioinfo
 
 ```
 nextflow run BCCDC-PHL/bioinflow -profile conda \
-  --fasta_dir /path/to/fasta_directory \
-  --model_R1 /path/to/error_model_R1 \
-  --model_R2 /path/to/error_model_R2 \
-  --outdir /path/to/outputs 
+  --input /path/to/input/file   \
+  --name <your name>  \
+  --all
 ```
 
 
@@ -30,16 +29,16 @@ The repo contains a environment.yml files which automatically build the correct 
 
 Important config options are:
 
-| Option                           | Default  | Description                                                                                                         |
-|:---------------------------------|---------:|--------------------------------------------------------------------------------------------------------------------:|
-| `vary_amplicon_depths`       | `false`    | Set to true if user is supplying individual amplicon depths                                                         |
-| `amplicon_depths`          | `NO_FILE`      | A CSV file containing "amplicon" and "depth" for each amplicon in primer.bed file                                                      |
-| `depth`                        | `50`     | Desired depth for reads if not supplying individual amplicon depths                                                                       |
-| `fragment_mean`                  | `600`     | Mean genomic fragment size                                            |
-| `fragment_sd`            | `75`   | Standard deviation of genomic fragment size                                                                    |
-| `read_length`               | `150`   | Simulated read length                                                                 |
-| `model_R1`                    | `NO_FILE`     | Error profile of R1 reads                                                                              |
-| `model_R2`                    | `NO_FILE`     | Error profile of R2 reads                                                                              |
+| Option        | Requirement | Default  | Description                                                                                                         |
+|:--------------|------------:|---------:|-----------------------------------------------------------------------------------------------------------:|
+| `input`       | `Mandatory` |          |Absolute path to the input file.                                                                                     |
+| `name`        | `Mandatory` |          | Name of user. Used for logging and output directory.                                                                |
+| `all `        | `Optional`  |          | Retrieve information about all pathogen analyses (flu, rsv, tb, sars-cov-2, treponema)                              |
+| `resp `       | `Optional`  |          | Retrieve information about respiratory pathogen analyses (flu, rsv, tb, sars-cov-2)                                 |
+| `virus`       | `Optional`  |          | Retrieve information about viral genomic analyses (flu, rsv, sars-cov-2)                                            |
+| `bact`        | `Optional`  |          | Retrieve information about bacterial genomic analyses (tb, treponema)                                               |
+| `pathogen`    | `Optional`  |          | Retrieve information about single pathogen of interest                                                              |
+| `pyjoke`      | `Optional`  |          | Output pyjoke                                                                                                       |
 
 #### Output
 A subdirectory for each process in the workflow is created in `--outdir`. 
