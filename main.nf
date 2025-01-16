@@ -7,10 +7,15 @@ nextflow.enable.dsl = 2
 def header() {
 
 return """
-                                                                              _
-BIOINFLOW                                                                     
-=========================================================================
+
+██████╗░██╗░█████╗░██╗███╗░░██╗███████╗██╗░░░░░░█████╗░░██╗░░░░░░░██╗
+██╔══██╗██║██╔══██╗██║████╗░██║██╔════╝██║░░░░░██╔══██╗░██║░░██╗░░██║
+██████╦╝██║██║░░██║██║██╔██╗██║█████╗░░██║░░░░░██║░░██║░╚██╗████╗██╔╝
+██╔══██╗██║██║░░██║██║██║╚████║██╔══╝░░██║░░░░░██║░░██║░░████╔═████║░
+██████╦╝██║╚█████╔╝██║██║░╚███║██║░░░░░███████╗╚█████╔╝░░╚██╔╝░╚██╔╝░
+╚═════╝░╚═╝░╚════╝░╚═╝╚═╝░░╚══╝╚═╝░░░░░╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░░
 output directory: ${params.outdir}
+workflow: 
 
 
 """
@@ -31,9 +36,8 @@ log.info header()
 include {printHelp} from './modules/help.nf'
 
 // import subworkflows
-include {convertFastaToAmplicons} from './modules/amplicone.nf'
-include {runART} from './modules/amplicone.nf'
-include {runARTVariableDepths} from './modules/amplicone.nf'
+include {influenza} from './modules/flu.nf'
+
 
 
 
@@ -48,22 +52,28 @@ if (params.profile){
 }
 
 
-ch_bedFile = Channel.fromPath(params.bed)
-ch_fastaDir = Channel.fromPath(params.fasta_dir_string).map{ tuple( it.baseName.split("\\.")[0], it) }
-ch_ampDepths = Channel.fromPath(params.amplicon_depths)
-
-
-
-
-
-
-
 // main workflow
 workflow {
 
-
+    in_ch = Channel.fromPath(params.input)
+    who_ch = Channel.value(params.name)
 
   main:
+
+    if (params.input) == "NO_FILE" {
+        error "ERROR: Missing mandatory input file. Specify with --input parameter."
+    } 
+
+    if !(params.name) {
+        error "ERROR: Missing mandatory input value. Who is this? Specify with --name parameter."
+    } 
+
+    if (params.resp) {
+
+        influenza | tb | sarscov2
+    }
+
+
 
     if (params.vary_amplicon_depths) {
 
