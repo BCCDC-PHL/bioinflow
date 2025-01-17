@@ -1,4 +1,4 @@
-process RSV {
+process rsv {
     tag { "Processing ${params.input} with respiratory syncytial virus for ${name}" }
 
     publishDir "${params.outdir}/${name}/RSV/TOOLS/", mode: 'copy', pattern: "*.yml"
