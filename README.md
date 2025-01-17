@@ -29,16 +29,16 @@ The repo contains a environment.yml files which automatically build the correct 
 
 Important config options are:
 
-| Option        | Requirement | Default  | Description                                                                                                         |
-|:--------------|------------:|---------:|-----------------------------------------------------------------------------------------------------------:|
-| `input`       | `Mandatory` |          |Absolute path to the input file.                                                                                     |
-| `name`        | `Mandatory` |          | Name of user. Used for logging and output directory.                                                                |
-| `all `        | `Optional`  |          | Retrieve information about all pathogen analyses (flu, rsv, tb, sars-cov-2, treponema)                              |
-| `resp `       | `Optional`  |          | Retrieve information about respiratory pathogen analyses (flu, rsv, tb, sars-cov-2)                                 |
-| `virus`       | `Optional`  |          | Retrieve information about viral genomic analyses (flu, rsv, sars-cov-2)                                            |
-| `bact`        | `Optional`  |          | Retrieve information about bacterial genomic analyses (tb, treponema)                                               |
-| `pathogen`    | `Optional`  |          | Retrieve information about single pathogen of interest                                                              |
-| `pyjoke`      | `Optional`  |          | Output pyjoke                                                                                                       |
+| Option        | Requirement | Description                                                                                                | Microbe  |
+|:--------------|------------:|-----------------------------------------------------------------------------------------------------------:|---------:|
+| `input`       | `Mandatory` |  Absolute path to the input file.                                                                          |           |
+| `name`        | `Mandatory` |  Name of user. Used for logging and output directory.                                                      |           |
+| `all `        | `Optional`  |  Retrieve information about all pathogen analyses                                                          | flu, rsv, tb, sars-cov-2, treponema     |
+| `resp `       | `Optional`  |  Retrieve information about respiratory pathogen analyses                                                  | flu, rsv, tb, sars-cov-2                |
+| `virus`       | `Optional`  |  Retrieve information about viral genomic analyses                                                         | flu, rsv,  sars-cov-2                   |
+| `bact`        | `Optional`  |  Retrieve information about bacterial genomic analyses                                                     | tb, treponema                          |
+| `pathogen`    | `Optional`  |  Retrieve information about single pathogen of interest                                                    | pathogen of interest                   |
+| `pyjoke`      | `Optional`  |  Output pyjoke                                                                                             |                                        |
 
 #### Output
 A subdirectory for each process in the workflow is created in `--outdir`. 
