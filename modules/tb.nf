@@ -1,11 +1,11 @@
 process tb {
     tag { "Processing ${params.input} with Mycobacterium tuberculosis for ${name}" }
 
-    publishDir "${params.outdir}/${name}/tb/TOOLS/", mode: 'copy', pattern: "*.yml"
-    publishDir "${params.outdir}/${name}/tb/DAG", mode: 'copy', pattern: "*.png"
-    publishDir "${params.outdir}/${name}/tb/TIPS", mode: 'copy', pattern: "*.md"
-    publishDir "${params.outdir}/${name}/tb/METADATA", mode: 'copy', pattern: "*.csv"
-    publishDir "${params.outdir}/${name}/tb/LOGS", mode: 'copy', pattern: "*.log"
+    publishDir "${params.outdir}/${name}/TB/TOOLS/", mode: 'copy', pattern: "*.yml"
+    publishDir "${params.outdir}/${name}/TB/DAG", mode: 'copy', pattern: "*.png"
+    publishDir "${params.outdir}/${name}/TB/TIPS", mode: 'copy', pattern: "*.md"
+    publishDir "${params.outdir}/${name}/TB/METADATA", mode: 'copy', pattern: "*.csv"
+    publishDir "${params.outdir}/${name}/TB/LOGS", mode: 'copy', pattern: "*.log"
 
     input:
     tuple path(input_file), val(name)
