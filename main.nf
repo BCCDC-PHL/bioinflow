@@ -67,9 +67,29 @@ workflow {
         error "ERROR: Missing mandatory input value. Who is this? Specify with --name parameter."
     } 
     
-    influenza(in_ch.combine(who_ch))
-    rsv(in_ch.combine(who_ch))
-    tb(in_ch.combine(who_ch))
+
+    if (params.all) {
+        influenza(in_ch.combine(who_ch))
+        rsv(in_ch.combine(who_ch))
+        tb(in_ch.combine(who_ch))
+    }
+
+    if (params.resp) {
+        influenza(in_ch.combine(who_ch))
+        rsv(in_ch.combine(who_ch))
+        tb(in_ch.combine(who_ch))
+    }
+    
+    if (params.virus) {
+        influenza(in_ch.combine(who_ch))
+        rsv(in_ch.combine(who_ch))
+    }
+
+    if (params.bact) {
+        influenza(in_ch.combine(who_ch))
+        tb(in_ch.combine(who_ch))
+
+    }
 
 
 }
