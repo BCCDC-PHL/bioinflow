@@ -35,6 +35,8 @@ log.info header()
 // include modules
 include {printHelp} from './modules/help.nf'
 include {influenza} from './modules/flu.nf'
+include {rsv} from './modules/rsv.nf'
+include {tb} from './modules/tb.nf'
 
 
 if (params.help){
@@ -66,6 +68,8 @@ workflow {
     } 
     
     influenza(in_ch.combine(who_ch))
+    rsv(in_ch.combine(who_ch))
+    tb(in_ch.combine(who_ch))
 
 
 }
