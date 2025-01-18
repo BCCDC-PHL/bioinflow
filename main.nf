@@ -74,18 +74,18 @@ workflow {
         tb(in_ch.combine(who_ch))
     }
 
-    if (params.resp) {
+    else if (params.resp) {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
         tb(in_ch.combine(who_ch))
     }
     
-    if (params.virus) {
+    else if (params.virus) {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
     }
 
-    if (params.bact) {
+    else if (params.bact) {
         influenza(in_ch.combine(who_ch))
         tb(in_ch.combine(who_ch))
 
