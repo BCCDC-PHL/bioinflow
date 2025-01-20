@@ -4,7 +4,7 @@ A Nextflow pipeline for providing public health bioinfo
 
 #### Introduction
 
-The bioinflow pipeline is a workflow that provides information such as tools used, tips, DAGs, and metadata on various pathogen genommics workflows utilized at the BCCDC-PHL.  It is designed to provide information specific to your interests. You can select specific categories or pathogens of interest and it will return tools and tips curated for you.
+The bioinflow pipeline is a workflow that provides information such as tools used, tips, DAGs, and metadata on various pathogen genomics workflows utilized at the BCCDC-PHL.  It is designed to provide information specific to your interests. You can select specific categories or pathogens of interest and it will return tools and tips curated for you.
 
 
 
