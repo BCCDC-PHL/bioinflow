@@ -4,7 +4,7 @@ A Nextflow pipeline for providing public health bioinfo
 
 #### Introduction
 
-
+Bioinflow is a pipeline designed to provide information designed on your interests. You can select specific categories or pathogens of interest and it will return tools and tips curated for you. 
 
 #### Quick-start
 
