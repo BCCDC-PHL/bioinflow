@@ -128,12 +128,10 @@ workflow {
         syphilis(in_ch.combine(who_ch))
 
     }
-
-
+    
     if (params.art) {
         generateAsciiArt() | view 
     }
-
 
 }
 
