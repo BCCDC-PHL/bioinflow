@@ -37,7 +37,7 @@ include {printHelp} from './modules/help.nf'
 include {influenza} from './modules/flu.nf'
 include {rsv} from './modules/rsv.nf'
 include {tb} from './modules/tb.nf'
-
+include {generateAsciiArt} from './modules/fun.nf'
 
 if (params.help){
     printHelp()
@@ -127,6 +127,11 @@ workflow {
         tb(in_ch.combine(who_ch))
         syphilis(in_ch.combine(who_ch))
 
+    }
+
+
+    if (params.art) {
+        generateAsciiArt() | view 
     }
 
 
