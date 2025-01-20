@@ -38,7 +38,6 @@ Important config options are:
 | `virus`       | `Optional`  |  Retrieve information about viral genomic analyses                                                         | flu, rsv,  sars-cov-2                   |
 | `bact`        | `Optional`  |  Retrieve information about bacterial genomic analyses                                                     | tb, treponema                          |
 | `pathogen`    | `Optional`  |  Retrieve information about single pathogen of interest                                                    | pathogen of interest                   |
-| `pyjoke`      | `Optional`  |  Output pyjoke                                                                                             |                                        |
 
 #### Output
 A subdirectory for each process in the workflow is created in `--outdir`. 
