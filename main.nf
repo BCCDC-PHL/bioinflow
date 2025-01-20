@@ -86,7 +86,6 @@ workflow {
     }
 
     else if (params.bact) {
-        influenza(in_ch.combine(who_ch))
         tb(in_ch.combine(who_ch))
 
     }
