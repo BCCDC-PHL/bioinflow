@@ -101,21 +101,31 @@ workflow {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
         tb(in_ch.combine(who_ch))
+        covid_wastewater(in_ch.combine(who_ch))
+        covid_clinical(in_ch.combine(who_ch))
+        syphilis(in_ch.combine(who_ch))
     }
 
     else if (params.resp) {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
         tb(in_ch.combine(who_ch))
+        covid_wastewater(in_ch.combine(who_ch))
+        covid_clinical(in_ch.combine(who_ch))
+
     }
     
     else if (params.virus) {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
+        covid_wastewater(in_ch.combine(who_ch))
+        covid_clinical(in_ch.combine(who_ch))
+
     }
 
     else if (params.bact) {
         tb(in_ch.combine(who_ch))
+        syphilis(in_ch.combine(who_ch))
 
     }
 
