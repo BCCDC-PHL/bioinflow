@@ -24,6 +24,22 @@ An up-to-date version of Nextflow is required because the pipeline is written in
 The repo contains a environment.yml files which automatically build the correct conda env if `-profile conda` is specifed in the command. 
 
 --cache /some/dir can be specified to have a fixed, shared location to store the conda build for use by multiple runs of the workflow.
+#### Input
+
+The input is a question file of format *.txt or *.md in addition to the user's name. Which file format is used depends on the pathogen of interest. The workflows and corresponding input file format is specified below:
+
+| Option       | Input Type | Workflow                                                                                                
+|:--------------|------------:|:-----------------------------------------------------------------------------------------------------------|
+| `--pathogen flu`       | *.txt |  Influenza only.                                                                          |
+| `--pathogen rsv`        | *.md |  RSV only.                                                      | 
+| `--pathogen tb`        | *.txt  |  TB only.                                                          |
+| `--pathogen sarscov2_ww`       | *.md |  SARS-CoV-2 in wastewater only.                                                  |          
+| `--pathogen sarscov2_clin`       | *.md  |  Clinical SARS-CoV-2 only.                                                         |
+| `--pathogen tpa`        | *.txt  |  Treponema pallidum subsp. pallidum only.                                                     |  
+| `--all`    |  *.txt or *.md |  Retrieve information about all pathogen analyses                                                  |             
+| `--resp`      | *.txt or *.md  |  Retrieve information about respiratory pathogen analyses                                                                   
+|`--virus`    |  *.txt or *.md |  Retrieve information about viral genomic analyses                                                    |
+| `--bact`    |  *.txt or *.md |  Retrieve information about bacterial genomic analyses                                                    | 
 
 #### Config
 
@@ -38,7 +54,6 @@ Important config options are:
 | `virus`       | `Optional`  |  Retrieve information about viral genomic analyses                                                         | flu, rsv,  sars-cov-2                   |
 | `bact`        | `Optional`  |  Retrieve information about bacterial genomic analyses                                                     | tb, treponema                          |
 | `pathogen`    | `Optional`  |  Retrieve information about single pathogen of interest                                                    | pathogen of interest                   |
-| `pyjoke`      | `Optional`  |  Output pyjoke                                                                                             |                                        |
 
 #### Output
 A subdirectory for each process in the workflow is created in `--outdir`. 
