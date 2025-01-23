@@ -1,4 +1,4 @@
-process covid_clin {
+process  covid_clinical {
     tag { "Processing ${params.input} with SARS-CoV-2 (clinical) for ${name}" }
 
     publishDir "${params.outdir}/${name}/SARS-CoV-2_CLINICAL/TOOLS/", mode: 'copy', pattern: "*.yml"
