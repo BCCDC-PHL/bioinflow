@@ -37,6 +37,7 @@ include {printHelp} from './modules/help.nf'
 include {influenza} from './modules/flu.nf'
 include {rsv} from './modules/rsv.nf'
 include {tb} from './modules/tb.nf'
+include {covid_clinical} from './modules/sars-cov-2-clinical.nf'
 
 
 if (params.help){
