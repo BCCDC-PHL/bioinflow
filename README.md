@@ -46,7 +46,7 @@ The input is a question file of format *.txt or *.md in addition to the user's n
 Important config options are:
 
 | Option        | Requirement | Description                                                                                                | Microbe  |
-|:--------------|------------:|-----------------------------------------------------------------------------------------------------------:|---------:|
+|:--------------|------------:|:-----------------------------------------------------------------------------------------------------------|:---------|
 | `input`       | `Mandatory` |  Absolute path to the input file.                                                                          |           |
 | `name`        | `Mandatory` |  Name of user. Used for logging and output directory.                                                      |           |
 | `all `        | `Optional`  |  Retrieve information about all pathogen analyses                                                          | flu, rsv, tb, sars-cov-2, treponema     |
@@ -54,7 +54,9 @@ Important config options are:
 | `virus`       | `Optional`  |  Retrieve information about viral genomic analyses                                                         | flu, rsv,  sars-cov-2                   |
 | `bact`        | `Optional`  |  Retrieve information about bacterial genomic analyses                                                     | tb, treponema                          |
 | `pathogen`    | `Optional`  |  Retrieve information about single pathogen of interest                                                    | pathogen of interest                   |
-
+| `email`    | `Optional`  |  Enter your email to receive your results                                                 |                  |
+| `question`    | `Optional`  |  Ask us a question. Ensure you use the --email param so we can get back to you                                                 |               |
+| `fun`      | `Optional`  | Have a little fun                       |                           |
 #### Output
 A subdirectory for each process in the workflow is created in `--outdir`. 
 
