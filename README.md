@@ -9,8 +9,8 @@ The bioinflow pipeline is a workflow that provides information on various pathog
 #### Quick-start
 
 ```
-nextflow run BCCDC-PHL/bioinflow -profile conda \
-  --input /path/to/input/file   \
+nextflow run BCCDC-PHL/bioinflow \
+  --input /path/to/input/file \
   --name <your name>  \
   --all
 ```
