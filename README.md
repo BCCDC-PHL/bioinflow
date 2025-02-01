@@ -19,11 +19,6 @@ nextflow run BCCDC-PHL/bioinflow \
 #### Installation
 An up-to-date version of Nextflow is required because the pipeline is written in DSL2. Follow the instructions at https://www.nextflow.io/ to download and install Nextflow.
 
-
-#### Conda
-The repo contains a environment.yml files which automatically build the correct conda env if `-profile conda` is specifed in the command. 
-
---cache /some/dir can be specified to have a fixed, shared location to store the conda build for use by multiple runs of the workflow.
 #### Input
 
 The input is a question file of format *.txt or *.md in addition to the user's name. Which file format is used depends on the pathogen of interest. The workflows and corresponding input file format is specified below:
