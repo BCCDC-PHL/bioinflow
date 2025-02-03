@@ -1,0 +1,6 @@
+program_start,status,sequencing_platform,sequencing_type,estimated_sequencing_volume,Upload_Status,pipelines_used,drylab_status,reagents
+20XX,active,(illumina or nanopore),(shotgun WGS targeted (enrichment or amplicon),(ex plates per year or samples per week or could include times of year when most active), (Can just be yes/no or detail platforms GISAID NML YVR VirusSeq as appropriate),(bioinformatics pipelines used),(validated or in progress of validation or in development etc),(if available)
+
+
+# potential additions
+-Wetlab_Contact
