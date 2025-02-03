@@ -129,7 +129,7 @@ workflow {
 
     }
     
-    if (params.art) {
+    if (params.fun) {
         generateAsciiArt() | view 
     }
 
