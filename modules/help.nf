@@ -1,7 +1,7 @@
 def printHelp() {
   log.info"""
   Usage:
-    nextflow run BCCDC-PHL/bioinflow -profile conda --input [path] [OPTIONS]
+    nextflow run BCCDC-PHL/bioinflow --name <NAME> --input </path/correct/input/file> [OPTIONS]
 
   Description:
     <Insert description>
@@ -9,8 +9,7 @@ def printHelp() {
     All options set via CLI can be set in conf directory
 
   Nextflow arguments (single DASH):
-    -profile                      Allowed values: conda
-    -resume                       Pick up analysis where you left off
+    -resume                       Pick up analysis where you left off  
  
   Workflow options:
     Mandatory:
@@ -20,9 +19,12 @@ def printHelp() {
     Optional:
       --resp                      Retrieve information about respiratory pathogen analyses (flu, rsv, tb, sars-cov-2) 
       --virus                     Retrieve information about viral genomic analyses (flu, rsv, sars-cov-2) 
-      --bact                      Retrieve information about bacterial genomic analyses (tb, treponema) 
+      --bact                      Retrieve information about bacterial genomic analyses (tb, tpa) 
       --pathogen                  Retrieve information about single pathogen of interest
-
+      --all                       Retrieve information about all pathogen analyses (flu, rsv, tb, sars-cov-2, tpa)
+      --email                     Enter your email to receive your results
+      --question                  Ask us a question. Ensure you use the --email parameter so we can get back to you
+      --fun                       Hava a little fun
 
 
   """.stripIndent()
