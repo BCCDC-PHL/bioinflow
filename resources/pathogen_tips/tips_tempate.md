@@ -4,7 +4,7 @@
 # What is the most challenging aspect of working with <PATHOGEN>?
 
 
-# # dry lab side
+## dry lab side
 
 ## wetlab side 
 
