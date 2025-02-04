@@ -39,6 +39,7 @@ include {rsv} from './modules/rsv.nf'
 include {tb} from './modules/tb.nf'
 include {covid_clinical} from './modules/sars-cov-2-clinical.nf'
 include {generateAsciiArt} from './modules/fun.nf'
+include {sendEmail} from './modules/email.nf'
 
 
 if (params.help){
@@ -81,6 +82,7 @@ workflow {
     } 
     else if (params.pathogen == "rsv") {
         rsv(in_md_ch.combine(who_ch))
+
     }
     else if (params.pathogen == "tb") {
         tb(in_txt_ch.combine(who_ch))
@@ -130,10 +132,22 @@ workflow {
         syphilis(in_ch.combine(who_ch))
 
     }
-    
+
+
     if (params.fun) {
         generateAsciiArt() | view 
     }
+
+
+    if (params.email != "NO EMAIL INPUT") {
+        sendEmail() | view
+    }
+
+    if (params.question != "NO QUESTION INPUT") {
+
+
+    }    
+
 
 }
 
