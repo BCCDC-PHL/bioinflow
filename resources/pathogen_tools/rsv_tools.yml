@@ -1,5 +1,5 @@
 # Note: to avoid redundancy, only the tools for RSV-A environments are listed below. 
-# packages in environment at artic-rsv-a-illumina:
+# packages in environment at artic-rsv-a-illumina: (https://github.com/BCCDC-PHL/rsv-a-artic) # currently private
 #
 # Name                    Version                   Build  Channel
 _libgcc_mutex             0.1                 conda_forge    conda-forge
@@ -123,7 +123,7 @@ zlib                      1.2.11            h166bdaf_1014    conda-forge
 zstd                      1.5.2                h8a70e8d_1    conda-forge
 
 
-# packages in environment at rsv-a-qc:
+# packages in environment at rsv-a-qc: (https://github.com/BCCDC-PHL/rsv-a-qc) # currently private
 #
 # Name                    Version                   Build  Channel
 _libgcc_mutex             0.1                 conda_forge    conda-forge
