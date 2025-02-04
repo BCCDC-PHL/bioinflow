@@ -1,2 +1,2 @@
-program_start,status,
-2020,active
+program_start,status,sequencing_platform,sequencing_type,estimated_sequencing_volume,Upload_Status,pipelines_used,drylab_status,reagents
+2020,active,illumina,amplicon NGS,~2 plates per week,Weekly uploads to NML and GISAID,BCCDC-PHL/BCCDC-PHL/ncov2019-artic-nf|BCCDC-PHL/ncov-tools|BCCDC-PHL/pangolin-nf,Pipelines developed and routinely used for analysis,
