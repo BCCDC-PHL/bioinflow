@@ -159,7 +159,7 @@ workflow.onComplete {
 
     
     def proc = ["bash", "-c", """
-        cd ${resultsDir} &&
+        cd ${params.outdir} &&
         zip -r "${zipFileName}" "${params.name}"
     """].execute()
     
