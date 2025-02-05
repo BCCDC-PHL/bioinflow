@@ -14,6 +14,8 @@ return """
 ██████╦╝██║╚█████╔╝██║██║░╚███║██║░░░░░███████╗╚█████╔╝░░╚██╔╝░╚██╔╝░
 ╚═════╝░╚═╝░╚════╝░╚═╝╚═╝░░╚══╝╚═╝░░░░░╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░░
 output directory: ${params.outdir}
+user: ${params.name}
+input: ${params.input} 
 
 
 """
@@ -125,10 +127,6 @@ workflow {
     }
 
 
-    if (params.email != "NO EMAIL INPUT") {
-        sendEmail() | view
-    }
-
     if (params.question != "NO QUESTION INPUT") {
 
 
@@ -138,8 +136,3 @@ workflow {
 }
 
 
-
-
-
-   
-    
