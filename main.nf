@@ -2,8 +2,6 @@
 
 nextflow.enable.dsl = 2
 
-// function and log info code obtained from BCCDC-PHL/covflo by Jessica Caleta
-
 
 def header() {
 
@@ -49,13 +47,6 @@ if (params.help){
     exit 0
 }
 
-/**
-if (params.profile){
-    println("Profile should have a single dash: -profile")
-    System.exit(1)
-}
-*/
-
 
 workflow {
 
@@ -84,7 +75,6 @@ workflow {
     } 
     else if (params.pathogen == "rsv") {
         rsv(in_md_ch.combine(who_ch))
-
     }
     else if (params.pathogen == "tb") {
         tb(in_txt_ch.combine(who_ch))
@@ -111,28 +101,22 @@ workflow {
         covid_clinical(in_ch.combine(who_ch))
         syphilis(in_ch.combine(who_ch))
     }
-
     else if (params.resp) {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
         tb(in_ch.combine(who_ch))
         covid_wastewater(in_ch.combine(who_ch))
         covid_clinical(in_ch.combine(who_ch))
-
     }
-    
     else if (params.virus) {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
         covid_wastewater(in_ch.combine(who_ch))
         covid_clinical(in_ch.combine(who_ch))
-
     }
-
     else if (params.bact) {
         tb(in_ch.combine(who_ch))
         syphilis(in_ch.combine(who_ch))
-
     }
 
 
