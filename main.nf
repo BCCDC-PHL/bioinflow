@@ -182,7 +182,10 @@ workflow.onComplete {
         Completed at: ${workflow.complete}
         Duration    : ${workflow.duration}
         Success     : ${workflow.success}
-        exit status : ${workflow.exitStatus}
+        Command line:   ${workflow.commandLine}
+        Bioinflow version:   ${workflow.manifest.version} 
+        Nextflow version:   ${nextflow.version}
+        Exit status:    ${workflow.exitStatus}
         """
         .stripIndent()
 
