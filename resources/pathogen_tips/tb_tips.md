@@ -9,6 +9,8 @@ Now, the dry lab side? That’s a different kind of challenge. The red screen of
 
 "The most challenging aspect of working with TB is wrapping my head around all the moving parts, especially the clustering. Setting up the process to test the outcomes of removing samples from existing clusters was complex. There's always something new to tackle around the corner but that also keeps it fun!" ~ Tara Newman, Genomics Liaison Technical Officer - BCCDC/NML
 
+"Just when I think I understand the taxonomy of Mycobacteria, I realize that I do not understand the taxonomy of Mycobacteria. Also, we gotta bust these tough cell walls open to get the precious DNA out, but we also want long reads. No fair!" ~ Dan Fornika, Genomics Liaison Technical Officer - BCCDC/NML
+
 ## Leadership
 
 # What is most rewarding aspect of working with TB?
@@ -24,5 +26,6 @@ As for leadership - it really shines when the lab's goals align with those of th
 
 "The most rewarding aspect is getting to help the TB lab, working with the amazing team, and learning SO SO much in the process! Getting to solve the errors and turn the red screen of death back to green is the ultimate reward :D" ~ Tara Newman, Genomics Liaison Technical Officer - BCCDC/NML
 
+"Mycobacteria, your slow mutation rate is a reprieve from the fast-moving world of microbial genomics. You’re the only microbe with a standard reference genome and I can’t thank you enough for it." ~ Dan Fornika, Genomics Liaison Technical Officer - BCCDC/NML
 
 ## Leadership
