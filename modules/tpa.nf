@@ -1,5 +1,5 @@
 process syphilis {
-    tag { "Processing ${params.input.baseName} with syphilis for ${name}" }
+    tag { "Processing ${params.input} with syphilis for ${name}" }
 
     publishDir "${params.outdir}/${name}/TREPONEMA_PALLIDUM/TOOLS/", mode: 'copy', pattern: "*.yml"
     publishDir "${params.outdir}/${name}/TREPONEMA_PALLIDUM/DAG", mode: 'copy', pattern: "*.svg"
