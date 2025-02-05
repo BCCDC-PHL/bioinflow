@@ -153,7 +153,6 @@ workflow {
 workflow.onComplete {
     if (params.email != "NO EMAIL INPUT") {
 
-    def resultsDir = "${projectDir}/results"
     def folderToZip = "${params.name}"
     def zipFileName = "${params.name}_bioinflow_results.zip"
 
