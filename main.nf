@@ -169,7 +169,7 @@ workflow.onComplete {
 
         Hello ${params.name}!
 
-        Attached are your Bioinflow results.
+        Attached are your bioinflow results.
 
         If you enjoyed using bioinflow, please check out BCCDC-PHL/bioinflow on GitHub and give us a star!
 
