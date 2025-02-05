@@ -1,5 +1,5 @@
 process covid_wastewater {
-    tag { "Processing ${params.input.baseName} with sars-cov-2-wastewater for ${name}" }
+    tag { "Processing ${params.input} with sars-cov-2-wastewater for ${name}" }
 
     publishDir "${params.outdir}/${name}/SARS-COV-2_WASTEWATER/TOOLS/", mode: 'copy', pattern: "*.yml"
     publishDir "${params.outdir}/${name}/SARS-COV-2_WASTEWATER/DAG", mode: 'copy', pattern: "*.svg"
