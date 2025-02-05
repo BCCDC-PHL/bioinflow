@@ -139,18 +139,57 @@ workflow {
     }
 
 
-    if (params.email != "NO EMAIL INPUT") {
-        sendEmail() | view
-    }
 
     if (params.question != "NO QUESTION INPUT") {
 
 
     }    
+   
 
 
 }
 
+
+workflow.onComplete {
+    if (params.email != "NO EMAIL INPUT") {
+
+    def resultsDir = "${projectDir}/results"
+    def folderToZip = "${params.name}"
+    def zipFileName = "${params.name}_bioinflow_results.zip"
+
+    
+    def proc = ["bash", "-c", """
+        cd ${resultsDir} &&
+        zip -r ${zipFileName} ${folderToZip}
+    """].execute()
+    
+    proc.waitFor()
+    
+    def msg = """
+
+        Hello ${params.name}!
+
+        Attached are your Bioinflow results.
+
+        If you enjoyed using bioinflow, please check out BCCDC-PHL/bioinflow on Github and give us a star!
+
+        Best,
+        Tara & Jess
+
+
+        Pipeline execution summary
+        ---------------------------
+        Completed at: ${workflow.complete}
+        Duration    : ${workflow.duration}
+        Success     : ${workflow.success}
+        exit status : ${workflow.exitStatus}
+        """
+        .stripIndent()
+
+    sendMail(to: "${params.email}", from: 'no-reply-bioinflow@bccdc.ca', subject: "${params.name}'s Bioinflow Results", body: msg, attach: "${resultsDir}/${zipFileName}")
+    }
+    println "Thank you for running bioinflow ${params.name}! Give us a star on Github if you enjoyed!"
+}
 
 
 
