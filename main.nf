@@ -188,7 +188,7 @@ workflow.onComplete {
 
     sendMail(to: "${params.email}", from: 'no-reply-bioinflow@bccdc.ca', subject: "${params.name}'s Bioinflow Results", body: msg, attach: "${resultsDir}/${zipFileName}")
     }
-    println "Thank you for running bioinflow ${params.name}! Give us a star on Github if you enjoyed!"
+    println "Thank you for running bioinflow ${params.name}! Give us a star on GitHub if you enjoyed!"
 }
 
 
