@@ -39,7 +39,7 @@ include {rsv} from './modules/rsv.nf'
 include {tb} from './modules/tb.nf'
 include {covid_clinical} from './modules/sars-cov-2-clinical.nf'
 include {generateAsciiArt} from './modules/fun.nf'
-include {sendEmail} from './modules/email.nf'
+
 
 
 if (params.help){
@@ -139,7 +139,6 @@ workflow {
     }
 
 
-
     if (params.question != "NO QUESTION INPUT") {
 
 
@@ -188,7 +187,7 @@ workflow.onComplete {
         """
         .stripIndent()
 
-    sendMail(to: "${params.email}", from: 'no-reply-bioinflow@bccdc.ca', subject: "${params.name}'s Bioinflow Results", body: msg, attach: "${resultsDir}/${zipFileName}")
+    sendMail(to: "${params.email}", from: 'no-reply-bioinflow@bccdc.ca', subject: "${params.name}'s Bioinflow Results", body: msg, attach: "${params.outdir}/${zipFileName}")
     }
     println "Thank you for running bioinflow ${params.name}! Give us a star on GitHub if you enjoyed!"
 }
