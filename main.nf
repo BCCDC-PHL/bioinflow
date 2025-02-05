@@ -160,7 +160,7 @@ workflow.onComplete {
     
     def proc = ["bash", "-c", """
         cd ${resultsDir} &&
-        zip -r ${zipFileName} ${folderToZip}
+        zip -r "${zipFileName}" "${params.name}"
     """].execute()
     
     proc.waitFor()
