@@ -13,13 +13,13 @@ process syphilis {
     output:
 
     tuple path(input_file), val(name), emit: connector
-    tuple path("*.yml"), path("*.svg"), path("*.md"), path("*.csv"), emit: output
+    tuple path("*.yml"), path("*.png"), path("*.md"), path("*.csv"), emit: output
     path("*.log"), emit: log
 
     script:
     """
 
-    cp ${projectDir}/resources/pathogen_workflow_dags/tpa_workflow.svg ./
+    cp ${projectDir}/resources/pathogen_workflow_dags/tpa_workflow.png ./
     cp ${projectDir}/resources/pathogen_tools/tpa_tools.yml ./
     cp ${projectDir}/resources/pathogen_tips/tpa_tips.md ./
     cp ${projectDir}/resources/pathogen_metadata/tpa_metadata.csv ./
