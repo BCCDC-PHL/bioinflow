@@ -41,7 +41,7 @@ include {covid_wastewater} from './modules/sars-cov-2-wastewater.nf'
 include {covid_clinical} from './modules/sars-cov-2-clinical.nf'
 include {syphilis} from './modules/tpa.nf'
 include {generateAsciiArt} from './modules/fun.nf'
-include {sendEmail} from './modules/email.nf'
+
 
 
 if (params.help){
@@ -136,3 +136,51 @@ workflow {
 }
 
 
+workflow.onComplete {
+    if (params.email != "NO EMAIL INPUT") {
+
+    def folderToZip = file("${params.outdir}/${params.name}", checkIfExists: true)
+    def zipFileName = "${params.name}_bioinflow_results.zip"
+
+    
+    def proc = ["bash", "-c", """
+        cd ${params.outdir} &&
+        zip -r "${zipFileName}" "${params.name}"
+    """].execute()
+    
+    proc.waitFor()
+    
+    def msg = """
+
+        Hello ${params.name}!
+
+        Attached are your bioinflow results.
+
+        If you enjoyed using bioinflow, please check out BCCDC-PHL/bioinflow on GitHub and give us a star!
+
+        Best,
+        Tara & Jess
+
+
+        Pipeline execution summary
+        ---------------------------
+        Completed at: ${workflow.complete}
+        Duration    : ${workflow.duration}
+        Success     : ${workflow.success}
+        Command line:   ${workflow.commandLine}
+        Bioinflow version:   ${workflow.manifest.version} 
+        Nextflow version:   ${nextflow.version}
+        Exit status:    ${workflow.exitStatus}
+        """
+        .stripIndent()
+
+    sendMail(to: "${params.email}", from: 'no-reply-bioinflow@bccdc.ca', subject: "${params.name}'s Bioinflow Results", body: msg, attach: "${params.outdir}/${zipFileName}")
+    }
+    println "Thank you for running bioinflow ${params.name}! Give us a star on GitHub if you enjoyed!"
+}
+
+
+
+
+   
+    
