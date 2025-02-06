@@ -2,8 +2,6 @@
 
 nextflow.enable.dsl = 2
 
-// function and log info code obtained from BCCDC-PHL/covflo by Jessica Caleta
-
 
 def header() {
 
@@ -16,6 +14,8 @@ return """
 ██████╦╝██║╚█████╔╝██║██║░╚███║██║░░░░░███████╗╚█████╔╝░░╚██╔╝░╚██╔╝░
 ╚═════╝░╚═╝░╚════╝░╚═╝╚═╝░░╚══╝╚═╝░░░░░╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░░
 output directory: ${params.outdir}
+user: ${params.name}
+input: ${params.input} 
 
 
 """
@@ -37,7 +37,9 @@ include {printHelp} from './modules/help.nf'
 include {influenza} from './modules/flu.nf'
 include {rsv} from './modules/rsv.nf'
 include {tb} from './modules/tb.nf'
+include {covid_wastewater} from './modules/sars-cov-2-wastewater.nf'
 include {covid_clinical} from './modules/sars-cov-2-clinical.nf'
+include {syphilis} from './modules/tpa.nf'
 include {generateAsciiArt} from './modules/fun.nf'
 
 
@@ -46,13 +48,6 @@ if (params.help){
     printHelp()
     exit 0
 }
-
-/**
-if (params.profile){
-    println("Profile should have a single dash: -profile")
-    System.exit(1)
-}
-*/
 
 
 workflow {
@@ -82,7 +77,6 @@ workflow {
     } 
     else if (params.pathogen == "rsv") {
         rsv(in_md_ch.combine(who_ch))
-
     }
     else if (params.pathogen == "tb") {
         tb(in_txt_ch.combine(who_ch))
@@ -109,28 +103,22 @@ workflow {
         covid_clinical(in_ch.combine(who_ch))
         syphilis(in_ch.combine(who_ch))
     }
-
     else if (params.resp) {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
         tb(in_ch.combine(who_ch))
         covid_wastewater(in_ch.combine(who_ch))
         covid_clinical(in_ch.combine(who_ch))
-
     }
-    
     else if (params.virus) {
         influenza(in_ch.combine(who_ch))
         rsv(in_ch.combine(who_ch))
         covid_wastewater(in_ch.combine(who_ch))
         covid_clinical(in_ch.combine(who_ch))
-
     }
-
     else if (params.bact) {
         tb(in_ch.combine(who_ch))
         syphilis(in_ch.combine(who_ch))
-
     }
 
 
@@ -140,10 +128,7 @@ workflow {
 
 
     if (params.question != "NO QUESTION INPUT") {
-
-
     }    
-   
 
 
 }

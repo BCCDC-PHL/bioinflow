@@ -1,0 +1,37 @@
+# packages in environments of WasteFlow: https://github.com/BCCDC-PHL/WasteFlow
+
+name: wasteflow
+channels:
+  - conda-forge
+  - bioconda
+  - r
+dependencies:
+  - python=3.9.13
+  - bcftools=1.9
+  - freebayes=0.9.21.7
+  - freyja=1.5.1
+  - snpeff=5.1
+  - openssl
+  - fastp=0.23.2
+  - ca-certificates
+  - certifi
+  - openssl
+  - trim-galore=0.6.7
+  - multiqc=1.14
+  - samtools=1.16.1
+  - minimap2=2.24
+  - bwa=0.7.17
+  - gsl
+  - r=4.2
+  - r-base=4.2.0
+  - r-optparse=1.7.1
+  - r-data.table=1.14.2
+  - r-lubridate=1.8.0
+  - r-stringr=1.4.0
+  - r-readr=2.1.2
+  - python=3.11.0
+  - snpsift=5.1
+  - pip
+  - pip:
+    - numpy==1.26.4
+    - pyarrow==11.0.0

@@ -1,0 +1,2 @@
+program_start,status,sequencing_platform,sequencing_type,estimated_sequencing_volume,Upload_Status,pipelines_used,drylab_status,reagents
+2023,active,Illumina Nextseq,amplicon WGS 150bp pe-reads,0.5 plate per week,Weekly uploads to NML,BCCDC-PHL/WasteFlow/|BCCDC-PHL/R post-processing (visualization & reporting),Production - Pipelines developed & validated and routinely used for analysis - verifications required when Freyja updated,
