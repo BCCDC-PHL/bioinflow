@@ -19,7 +19,6 @@ dependencies:
   - mafft=7.471
   - bbmap=38.97
 
-
 # packages in environment at rsv-a-qc: (https://github.com/BCCDC-PHL/rsv-a-qc) # currently private
 #
 name: rsv-a-qc
@@ -39,7 +38,6 @@ dependencies:
   - samtools=1.17
 
 # RSVB
-
 # packages in environment at artic-rsv-b-illumina: (https://github.com/BCCDC-PHL/rsv-b-artic-nf) # currently private
 #
 name: artic-rsv-b-illumina
