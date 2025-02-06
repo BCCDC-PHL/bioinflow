@@ -13,7 +13,7 @@ Now, the dry lab side? That’s a different kind of challenge. The red screen of
 
 ## Leadership
 
-"The TB bacteria is not a normal bacteria and has been hanging around for centuries.  The global world is trying to STOP TB and one day get rid of this bug.  The BCCDC Public Health Mycobacteriology/TB laboratory medical technologists team and the bioinformatics team have devoted over seven years to advancing the laboratory’s capabilities.  Their efforts have positioned the BC Centre for Disease Public Health Provincial laboratory in Canada to be the first to implement whole genome sequencing with improved pipelines on all new TB diagnosed cases." ~ Mabel Rodrigues, BCCDC PHL Mycobacteriology TB laboratory
+"The TB bacteria is not a normal bacteria and has been hanging around for centuries.  The global world is trying to STOP TB and one day get rid of this bug.  The BCCDC Public Health Mycobacteriology/TB laboratory medical technologists team and the bioinformatics team have devoted over seven years to advancing the laboratory’s capabilities.  Their efforts have positioned the BC Centre for Disease Public Health Provincial Laboratory in Canada to be the first to implement whole genome sequencing with improved pipelines on all new TB diagnosed cases." ~ Mabel Rodrigues, BCCDC PHL Mycobacteriology TB laboratory
 
 
 "M. tuberculosis is a notoriously challenging organism, posing numerous obstacles - including in the genomics. These include difficulties with rapid data generation from liquid cultures, precision in correlations between genotypic and phenotypic drug susceptibility, and others." ~ Inna Sekirov, BCCDC PHL Mycobacteriology TB laboratory 
