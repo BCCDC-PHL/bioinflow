@@ -128,8 +128,6 @@ workflow {
 
 
     if (params.question != "NO QUESTION INPUT") {
-
-
     }    
 
 
