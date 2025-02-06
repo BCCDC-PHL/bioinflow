@@ -2,7 +2,7 @@
 
 ## Laboratory Team
 
-"The most challenging part of working with TB in the wet lab? Where do I even start? TB grows so slowly… or in clumps… or sometimes in flaky, stubborn little chunks. Really, TB just does whatever it wants, like that one unpredictable friend. Consistency? Never heard of it. And because it grows so slowly, getting enough high-quality DNA can be like trying to squeeze water from a stone. Which means—low input, all the time. Working with TB requires patience, something that most med techs aren’t exactly known for. 😊  On the flip side, the most rewarding part of the wet lab is streamlining workflows to make them more efficient. There’s something really satisfying about making the process smoother and more innovative while still delivering top-notch clinical results.
+"The most challenging part of working with TB in the wet lab? Where do I even start? TB grows so slowly… or in clumps… or sometimes in flaky, stubborn little chunks. Really, TB just does whatever it wants, like that one unpredictable friend. Consistency? Never heard of it. And because it grows so slowly, getting enough high-quality DNA can be like trying to squeeze water from a stone. Which means—low input, all the time. Working with TB requires patience, something that most med techs aren’t exactly known for. 😊
 Now, the dry lab side? That’s a different kind of challenge. The red screen of death!! Picture this: you’re staring into the abyss that is Command Line, knowing your pipeline has failed. You dig through the code, only to discover you’ve added a space where it shouldn’t be. That moment of realization is... very satisfying." ~ Trevor Hird, BCCDC PHL Mycobacteriology TB laboratory
 
 ## Bioinformatics Team 
@@ -24,8 +24,7 @@ Now, the dry lab side? That’s a different kind of challenge. The red screen of
 
 ## Laboratory Team
 
-"The true highlight has been being part of building the TB Genomics Program and Bioinformatics pipelines from scratch. Watching brilliant minds tackle complex problems, collaborate, and innovate in real-time has been one of the greatest career milestones for me. I’m very lucky to have such an amazing team.
-And it's also very exciting to finally see people take a real interest in TB genomics now that WGS is in play!
+"The most rewarding part of the wet lab is streamlining workflows to make them more efficient. There’s something really satisfying about making the process smoother and more innovative while still delivering top-notch clinical results. The true highlight has been being part of building the TB Genomics Program and Bioinformatics pipelines from scratch. Watching brilliant minds tackle complex problems, collaborate, and innovate in real-time has been one of the greatest career milestones for me. I’m very lucky to have such an amazing team. And it's also very exciting to finally see people take a real interest in TB genomics now that WGS is in play!
 As for leadership - it really shines when the lab's goals align with those of the leader. It makes transitions smoother, discussions more productive, and progress a whole lot easier." ~ Trevor Hird, BCCDC PHL Mycobacteriology TB laboratory
 
 
