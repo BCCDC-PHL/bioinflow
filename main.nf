@@ -41,7 +41,7 @@ include {covid_wastewater} from './modules/sars-cov-2-wastewater.nf'
 include {covid_clinical} from './modules/sars-cov-2-clinical.nf'
 include {syphilis} from './modules/tpa.nf'
 include {generateAsciiArt} from './modules/fun.nf'
-
+include {collect_question} from './modules/question.nf'
 
 
 if (params.help){
@@ -61,6 +61,8 @@ workflow {
     in_ch = in_txt_ch.concat(in_md_ch)
 
     who_ch = Channel.of(params.name)
+
+    q_ch = Channel.fromPath(params.question_file)
 
   main:
 
@@ -127,7 +129,8 @@ workflow {
     }
 
 
-    if (params.question != "NO QUESTION INPUT") {
+    if (params.question != "NO QUESTION INPUT" & params.email != "NO EMAIL INPUT") {
+        collect_question(q_ch)
     }    
 
 
