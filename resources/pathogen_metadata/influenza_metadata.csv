@@ -1,2 +1,2 @@
-program_start,status,
-20XX,active
+program_start,status,sequencing_platform,sequencing_type,estimated_sequencing_volume,Upload_Status,pipelines_used,drylab_status,reagents
+20XX,active,Illumina,amplicon targetted/WGS,1 plate per month,None,BCCDC-PHL/fluviewer-nf|BCCDC-PHL/fluscan(dev)|BCCDC-PHL/fluflo,Production - Pipelines developed & validated and routinely used for analysis, 
