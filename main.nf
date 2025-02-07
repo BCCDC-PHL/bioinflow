@@ -52,10 +52,10 @@ if (params.help){
 
 workflow {
 
-    in_txt_ch = Channel.fromPath(params.input)
+    in_txt_ch = Channel.fromPath(params.input_dir)
     .filter { it.name.endsWith('.txt') }
 
-    in_md_ch = Channel.fromPath(params.input)
+    in_md_ch = Channel.fromPath(params.input_dir)
     .filter { it.name.endsWith('.md') }
 
     in_ch = in_txt_ch.concat(in_md_ch)
