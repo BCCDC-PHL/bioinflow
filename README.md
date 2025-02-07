@@ -13,7 +13,7 @@ The bioinflow pipeline is a workflow that provides information on various pathog
 
 ```
 nextflow run BCCDC-PHL/bioinflow \
-  --input /path/to/input/file \
+  --input <input_file> \
   --name <your name>  \
   --all
 ```
@@ -24,7 +24,7 @@ An up-to-date version of Nextflow is required because the pipeline is written in
 
 #### Input
 
-The input is a question file of format *.txt or *.md located at ./bioinflow/resources/input in addition to the user's name. Which file format is used depends on the pathogen of interest. The workflows and corresponding input file format is specified below:
+The input is a question file of format *.txt or *.md (either question.txt or question.md) in addition to the user's name. Which file format is used depends on the pathogen of interest. The workflows and corresponding input file format is specified below:
 
 | Option       | Input Type | Workflow                                                                                                
 |:--------------|------------:|:-----------------------------------------------------------------------------------------------------------|
