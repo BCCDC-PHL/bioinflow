@@ -92,7 +92,7 @@ workflow {
     else if (params.pathogen == "tpa") {
         syphilis(in_txt_ch.combine(who_ch))
     }
-    else {
+    else if (params.pathogen != "NO FILE") {
         error "ERROR: This pathogen does not exist. Check spelling or docs for valid options."
     }
     
