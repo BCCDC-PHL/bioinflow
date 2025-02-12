@@ -1,2 +1,2 @@
 program_start,status,sequencing_platform,sequencing_type,estimated_sequencing_volume,Upload_Status,pipelines_used,drylab_status
-2022,active,Illumina,amplicon targetted/WGS,1 plate per month,Batch uploads to GISAID using CLI (epyflu),BCCDC-PHL/fluviewer-nf|BCCDC-PHL/fluscan(dev)|BCCDC-PHL/fluflo,Production - Pipelines developed & validated and routinely used for analysis, 
+2022,active,Illumina,amplicon targetted/WGS,1 plate per month,Batch uploads to GISAID using CLI (epyflu),BCCDC-PHL/fluviewer-nf|BCCDC-PHL/fluscan(dev)|BCCDC-PHL/fluflo,Production - Pipelines developed & validated and routinely used for analysis 
