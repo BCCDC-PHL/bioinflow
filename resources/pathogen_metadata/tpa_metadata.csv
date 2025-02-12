@@ -1,2 +1,2 @@
-program_start,status,sequencing_platform,sequencing_type,estimated_sequencing_volume,Upload_Status,pipelines_used,drylab_status,reagents
-2024,development,Illumina/ONT,amplicon targetted/WGS,1 plate per month,None,nf-core/viralrecon|BCCDC-PHL/kma-cgmlst,Development - typing scheme in progress and pipelines require updating depending on if short or long reads used,
+program_start,status,sequencing_platform,sequencing_type,estimated_sequencing_volume,Upload_Status,pipelines_used,drylab_status
+2024,development,Illumina/ONT,amplicon targetted/WGS,1 plate per month,None,nf-core/viralrecon|BCCDC-PHL/kma-cgmlst,Development - typing scheme in progress and pipelines require updating depending on if short or long reads used
