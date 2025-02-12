@@ -6,11 +6,9 @@
 
 ## Bioinformatics Team
 
-"Working with RSV subtypes A and B means everything has to be done twice while ensuring consistency across both." ~ Tara Newman, Genomics Liaison Technical Officer BCCDC/NML
+"RSV is double trouble — duplication is a recurring theme. Exhibit A: Working with both A and B subtypes means everything has to be done twice, requiring consistency across both analysis workflows. Exhibit B: There is both Clade typing and G Clade typing. Exhibit C: In 2016, a duplication event in the G gene occurred in both subtypes that is present in all modern lineages, making it important to use an appropriate reference genome for assembly."  ~ Tara Newman, Genomics Liaison Technical Officer BCCDC/NML
 
 ## Leadership
-
-
 
 
 # What is the most rewarding aspect of working with RSV?
@@ -21,6 +19,6 @@
 
 ## Bioinformatics Team
 
-"This was my first experience working on a project from the very beginning and it's been great to experience all the stages of development." ~ Tara Newman, Genomics Liaison Technical Officer BCCDC/NML
+"This was my first experience working on a new pathogen/project from the very beginning and I've enjoyed getting to experience all the stages of development and learning ways to supplement our clinical data with in silico data to enhance clade representation in our datasets." ~ Tara Newman, Genomics Liaison Technical Officer BCCDC/NML
 
 ## Leadership
