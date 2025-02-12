@@ -1,2 +1,2 @@
-program_start,status,sequencing_platform,sequencing_type,estimated_sequencing_volume,Upload_Status,pipelines_used,drylab_status,reagents
-in development(expected 2025),active,illumina,amplicon NGS,in development,in development,BCCDC-PHL/rsv-a-artic-nf|BCCDC-PHL/rsv-a-qc|BCCDC-PHL/rsv-b-artic-nf|BCCDC-PHL/rsv-b-qc,validated,
+program_start,status,sequencing_platform,sequencing_type,Upload_Status,pipelines_used,drylab_status
+2023,development,illumina,amplicon targeted/WGS,None,BCCDC-PHL/rsv-a-artic-nf|BCCDC-PHL/rsv-a-qc|BCCDC-PHL/rsv-b-artic-nf|BCCDC-PHL/rsv-b-qc,validation pending final approval

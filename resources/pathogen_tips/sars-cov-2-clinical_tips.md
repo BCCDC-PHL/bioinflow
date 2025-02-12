@@ -15,7 +15,6 @@
 "Pangolin lineages. If I wanted alphabet soup I’d go to the alphabet soup store. Also SARS-CoV-2, you’re the reason I have to answer my relatives’ strange questions after they “do their own research.” Nobody “does their own research” on Salmonella." ~ Dan Fornika, Genomics Liaison Technical Officer - BCCDC/NML
 
 
-## Leadership
 
 
 # What is most rewarding aspect of working with SARS-CoV-2 (Clinical)?
@@ -34,7 +33,6 @@
 "For a brief moment you made microbial genomic epidemiology the top story across the world. Thanks, I guess?" ~ Dan Fornika, Genomics Liaison Technical Officer - BCCDC/NML
 
 
-## Leadership
 
 
 
